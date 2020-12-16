@@ -1,0 +1,1489 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: sans-serif;
+	background: linear-gradient(rgba(91, 227, 255, 0) 0%, rgba(84, 224, 253, 0.09) 0%, #16c3e6 100%, #2e7280 100%);
+	filter: 0px;
+	color: #ffffff;
+	overflow-x: hidden;
+}
+
+/*-----------MENU BURGER-----------*/
+
+.toggle_btn {
+    display: none;
+    height: 44px;
+    width: 44px;
+	cursor: pointer;
+	position: fixed;
+	top: 10px;
+    left: 10px;
+	border: 2px solid #ffffff;
+	border-radius: 5px;
+	padding: 6px 7px;
+	background-color: rgba(0, 0, 0, 0.3);
+	text-align: center;
+	z-index: 5;
+}
+
+.toggle_btn i{
+	font-size: 30px;
+	color: #ffffff;
+}
+
+.menu a {
+    color: #ffffff;
+	display: block;
+	padding-top: 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.nav {
+	display: none;
+
+}
+
+.nav_open {
+    display: block;
+    background-color: #3fc2dc;
+	position: fixed;
+    z-index: 15;
+    width: 100%;
+    padding-top: 35px 0 20px 20px;
+    text-align: center;
+    padding-bottom: 30px;
+    opacity: 0.9;
+    font-size: 25px;
+    line-height: 40px;    
+}
+
+/*-----------fenetre POPUP COVID-----------*/
+
+#popupCovid {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow: auto;
+    background-color: #3fc2dcd7;
+	opacity:1;
+    height: 100%;
+    width: 100%;
+    z-index: 15;
+}
+
+.contenu {
+        background-color: #ffffff;
+        color: #006c7a;
+        width: 60%;
+        padding: 10px 40px 40px 40px;
+        margin: auto;
+        margin-top: 100px;
+        text-align: justify;
+        line-height: 35px;
+	}
+	
+.contenu h1 {
+	text-align: center;
+	font-size: 60px;
+	line-height: 80px;
+	color: #006c7a;
+	margin-bottom: 50px;
+}
+
+#btnNo {
+        border: 100%;
+        border: 1px solid #006c7a;
+        text-decoration: none;
+        color: #006c7a;
+        padding: 10px;
+        
+}
+#btnNo:hover {
+        background-color: #006c7a;
+        color: #ffffff;
+}
+
+.btnStyle {
+        text-align: center;
+        margin-top: 50px;
+}
+
+
+/* ------------------------------HEADER------------------------------ */
+
+header {
+	width: 100%;
+	height: 142px;
+	margin: auto;
+	background: linear-gradient(#5be3ff 0%, #51cae3 38.49%, #3d8a9a 100%);
+}
+
+header img {
+	margin: auto;
+	display: block;
+	padding-top: 6px;
+}
+
+nav {
+	display: flex;
+	background: linear-gradient(#3fc2dc 0%, #20616e 100%);
+	width: 100%;
+	margin: auto;
+}
+
+.boutonmenu {
+	width: 25%;
+	height: 46px;
+	text-align: center;
+	text-transform: uppercase;
+	line-height: 46px;
+	margin: auto;
+	text-decoration: none;
+	color: #ffffff;
+	
+}
+
+.boutonmenu:hover {
+	width: 25%;
+	height: 46px;
+	background: linear-gradient(#396169 0%, #276d7c 35.55%, #19778a 100%);
+}
+
+
+/* ----------------------------------------------------------------------- */
+
+/* -------------------------------PAGE D ACCUEIL------------------------------- */
+
+
+/*photo equipe*/
+
+#slide {
+	position: relative;
+	margin: 0;
+}
+
+#slide img {
+	width: 100%;
+	height: 100%;
+	margin: auto;
+    display: block;
+}
+
+#intro {
+    width: 100%;
+    background-color: #ffffff;
+    color: black;
+    position: absolute;
+    top: 80%;
+    left: 0;
+    height: 100px;
+	opacity: 0.9;
+}
+
+#intro p{
+	padding: 10px;
+	text-align: center;
+	font-family: "dancing script";
+	font-size: 60px;
+	font-weight: 500;
+	color: #006c7a;
+}
+
+/*soins */
+
+.ligne {
+	display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.position {
+	position: relative;
+	text-align: center;
+	width: 234px;
+}
+
+.textcenter {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    line-height: 100%;
+    z-index: 1;
+}
+
+.textcenter h2 {
+	color: #ffffff;
+	margin: 0;
+}
+
+.voile{
+    position: absolute;
+    top: 0%;
+    width: 234px;
+    height: 234px;
+    background-color: rgba(67, 171, 193, 0.67);
+    border-radius: 50%;
+}
+
+.voile:hover {
+	background-color: transparent;
+	z-index: 1;
+	transition: 0.5s;	
+}
+
+/*formulaire, coordonnées et carte*/
+
+#cartegoogle {
+	max-width: 100%;
+}
+
+#coordonnees {
+	flex: 1;
+    margin: 0 7%;
+	font-family: "roboto", open sans;
+}
+
+#coordonnees h2 {
+	margin-bottom: 10px;
+}
+
+.adresse {
+	margin-bottom: 30px;
+}
+
+.tel i {
+	font-size: 30px;
+	margin-bottom: 10px;
+}
+
+.tel p {
+	margin-bottom: 30px;
+}
+
+.horaires i {
+	font-size: 30px;
+	margin-bottom: 10px;
+}
+
+.horaires p {
+	margin-bottom: 30px;
+}
+
+#formulaire {
+    margin: 30px auto;
+	text-align: center;
+    display: flex;
+    width: fit-content;
+	padding: 30px 0;
+	font-family: "roboto", open sans;
+}
+
+.carte {
+	padding-top: 20px;
+    margin-right: 25px;
+    flex: 1;
+}
+
+.contact {
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+
+}
+
+.adresse h2 {
+	color: #fff;
+}
+.contact .form {
+	border-radius: 10px;
+    height: 30px;
+    border: none;
+    width: 80%;
+    margin: 10px;
+    text-align: center;
+	font-size: 15px;
+	font-family: "roboto", open sans;
+}
+
+.contact #msg {
+    border-radius: 10px;
+    height: 60px;
+    border: none;
+    width: 80%;
+    margin: 10px;
+    text-align: center;
+    font-family: "roboto", open sans;
+    font-size: 15px;
+}
+
+.contact #envoyer {
+    margin: auto;
+    padding: 10px;
+    border: none;
+    color: #ffffff;
+    font-size: 13px;
+    display: block;
+    cursor: pointer;
+    width: fit-content;
+    text-decoration: none;
+    font-family: "roboto", open sans;
+    letter-spacing: 0.3em;
+    background: linear-gradient(#396169 0%, #0c4d59 36.82%, #19778a 97.07%, #0d3c45 100%);
+    box-shadow: 0px 3px 6px #000;
+}
+
+.contact #envoyer:hover {
+    background: linear-gradient(#3fc2dc 0%, #20616e 100%);
+    box-shadow: 0px 3px 6px #396169;
+}
+
+.civilite input{
+    text-align: center;
+    margin: 10px;
+}
+
+/*Coordonées*/
+
+#coordonnees {
+    text-align: center;
+    padding: 10px;
+}
+
+
+/* ------------------------------PAGE PRESENTATION CLINIQUE------------------------------ */
+
+
+#lignepresentation{
+	display: flex;
+	padding: 10px 10px;
+	width: 100%;
+	justify-content: space-around;
+}
+
+#carreclinique {
+	width: 40%;
+	height: 370px;
+	background-color: #006c7a;
+}
+
+#carreclinique p {
+	
+	text-align: center;
+	padding: 13% 20px;
+	line-height: 50px;
+	font-family: "roboto", sans-serif;
+	font-weight: 200px;
+	font-size: 20px;
+	font-variant-caps: small-caps;
+}
+
+.ligneportraits {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin-top: 50px;
+}
+
+h1 {
+	text-align: center;
+	font-family: "roboto";
+	font-weight: 300;
+	font-size: 35px;
+	margin: 100px auto;
+	text-transform: uppercase;
+	color: #20616e;
+}
+
+/* ---------Cartes Rotatives--------- */
+
+  .card{
+	cursor: pointer;
+	width: 200px;
+	height: 156px;
+	margin: 20px 3%;
+	
+}
+
+  .front,.back{
+	width: 200px;
+	height: 156px;
+	overflow: hidden;
+	backface-visibility: hidden;
+	position: absolute;
+	transition: transform .6s linear;
+}
+
+  .front img{
+	border-radius: 10px;
+	border: 1px solid #c0c0c0 ;
+	width: 100%;
+}
+
+  .front{
+	transform: perspective(600px) rotateY(0deg);
+}
+
+  .back{
+	border-radius: 10px;
+	border: 1px solid #838383 ;
+	background: #f1f1f1;
+	transform: perspective(600px) rotateY(180deg);
+}
+
+  .back-content{
+	color: #2c3e50;
+	text-align: center;
+	font-family:  "roboto", sans serif;
+	font-size: 20px;
+	margin-top: 20px;
+}
+
+  .ajoutResponsive {
+	  display: none;
+	  margin: 5px auto 30px auto;
+}
+
+  .ajoutResponsive a {
+	color: #2c3e50;
+	text-align: center;
+	font-family:  "roboto", sans serif;
+	font-size: 17px;
+	text-decoration: none;
+}
+
+  .rectifperso {
+	width: 300px;
+}
+  
+  .sm{
+	margin: 20px 0;
+}
+
+  .sm a{
+	display: inline-flex;
+	width: 40px;
+	height: 40px;
+	justify-content: center;
+	align-items: center;
+	color: #2c3e50;
+	font-size: 18px;
+	transition: 0.4s;
+	border-radius: 50%
+}
+
+.sm a:hover{
+	background: #2c3e50;
+	color: white;
+}
+
+  .card:hover > .front{
+	transform: perspective(600px) rotateY(-180deg);
+	
+}
+
+  .card:hover > .back{
+	transform: perspective(600px) rotateY(0deg);
+}
+
+  /* --------------------------------------------- */
+
+#ligneequipements {
+	display: flex;
+	justify-content: space-around;
+	margin: 50px 0;
+}
+
+.bloc {
+	font-family: roboto, sans-serif;
+	font-size: 17px;
+	font-weight: 200;
+	width: 20%;
+	text-align: justify;
+}
+
+  /* -----------------SLIDESHOW----------------------- */
+
+  .slidershow{
+	width: 700px;
+	height: 400px;
+	overflow: hidden;
+}
+
+  .navigation{
+	position: relative;
+	bottom: 50px;
+	left: 27%;
+	display: flex;
+
+}
+  .bar{
+	width: 50px;
+	height: 10px;
+	border: 2px solid #fff;
+	margin: 6px;
+	cursor: pointer;
+	transition: 0.4s;
+}
+
+  .bar:hover{
+	background: #fff;
+  }
+  
+  input[name="r"]{
+	  position: absolute;
+	  visibility: hidden;
+}
+  
+  .slides{
+	width: 500%;
+	height: 100%;
+	display: flex;
+}
+  
+  .slide{
+	width: 20%;
+	transition: 0.6s;
+}
+
+  .slide img{
+	width: 100%;
+	height: 100%;
+}
+  
+  #r1:checked ~ .s1{
+	margin-left: 0;
+  }
+  #r2:checked ~ .s1{
+	margin-left: -20%;
+  }
+  #r3:checked ~ .s1{
+	margin-left: -40%;
+  }
+  #r4:checked ~ .s1{
+	margin-left: -60%;
+  }
+  #r5:checked ~ .s1{
+	margin-left: -80%;
+  }
+  
+/* ------------------------------EQUIPE------------------------------- */
+
+/*-----------Div TITRE EQUIPE-------------------------*/
+
+#titreEquipe{	
+	width:100%;
+	margin:100px auto;
+}
+
+#titreEquipe h1{
+	text-align: center;
+	text-transform:uppercase;
+	font-size: 45px;
+	color: #20616e;
+}
+
+
+/*-----------------PARTIE SUR LE CV DU DR---------------------*/
+.photoDoc {
+	padding-top: 100px;
+}
+
+.photoProfil {
+   width:35%;
+   margin: auto;
+}
+
+.photoDoc img{
+   width:100%;
+   box-shadow: 0px 3px 6px #396169;
+}
+
+.bouton{
+	width:100%;
+	text-align: center;
+	border-radius: 5px;
+	margin-bottom: 20px;
+}
+
+.bouton a{
+	background: linear-gradient(#3fc2dc 0%, #20616e 100%);
+   	border:1px solid #20616e;
+   	border-radius:20px 0 20px 0;
+	text-decoration:none;
+  	margin: auto;
+	color:#ffffff;
+	font-size :21px;
+	padding:10px;
+}
+
+.bouton a:hover{
+	background: linear-gradient(#396169 0%, #276d7c 35.55%, #19778a 100%);
+   height:auto;
+   color: #ffffff;
+   border-radius: 0 20px 0 20px;;
+}
+
+.container{
+   width:100%;
+   display:flex;
+   padding:0 0 40px 0;
+}
+
+.plusdInfos {
+	display: none;
+}
+
+.metier{
+	
+	width:40%;
+	padding :40px;
+	margin: 100px auto 0 auto;
+	color:  #20616e;	
+}
+
+.metier p{
+	font-family: roboto, sans-serif;
+	font-size: 20px;
+	font-weight: 200;
+   	width:100%;
+}
+
+.metier2{
+	width:40%;
+	padding :40px;
+	margin:auto;
+	color: #fff;	
+}
+
+.metier2 p{
+	font-family: roboto, sans-serif;
+	font-size: 20px;
+	font-weight: 200;
+   width:100%;
+}
+
+h2{
+   color:  #20616e;
+   text-align:center;
+   font-family:"roboto";
+   margin:10px 0 0 0;
+   font-size: 1.5em;
+}
+
+h4{
+	color:  #20616e;
+   text-align: center;
+   padding:0 0 15px 0;
+   font-style:italic;
+}
+
+h5{
+	color:  #fff;
+	text-align:center;
+	font-family:"roboto";
+	margin:10px 0 0 0;
+	font-size: 1.5em;
+ }
+ 
+ h6{
+	 color:  #fff;
+	text-align: center;
+	padding:0 0 15px 0;
+	font-style:italic;
+	font-size: 1em;
+ }
+
+ul{
+   list-style: none;
+
+}
+
+ul p{
+   width:100%;
+	margin-left: 20px;
+	padding:10px;
+   text-align: justify;
+
+}
+
+h3{
+	font-family: "roboto";
+	
+}
+
+body{
+	background: linear-gradient(rgba(91,227,255,0)0%, rgba(84,224,253,0.09)0%, #16c3e6 100%, #2e7280 100%);
+	filter:0px;	
+	width:100%;
+}
+
+section{
+	width:100%;
+	margin:50px auto;
+}
+
+.infosResp {
+	display: none;
+}
+
+
+/* ------------------------------SOINS------------------------------- */
+
+
+#dv{
+	padding: 5px;
+	margin-left: -20%;
+	margin-top: 5px;
+	background-image: url('../images/logo-mini.png');
+	background-repeat: no-repeat;
+	background-size: 88px;
+	width: 20%;
+	transition: all 0.8s ease-in-out;
+}
+
+
+#logoMini{
+	padding: 5px;
+	position: fixed;
+	margin-left: 5%;
+	margin-right:5% ;
+	display: none;
+
+}
+/* soins */
+
+#navigation{
+
+	z-index: 10;
+	transition-duration: 1s;
+
+	
+}
+#soinsMain {
+	display: inline-block;
+	justify-content: space-around;
+	width: 100%;
+	margin: 0;
+}
+
+#soinsMain h1{
+	margin: 100px auto;
+	text-align: center;
+	text-transform:uppercase;
+	font-size: 45px;
+	color: #20616e;
+	width: 70%;
+}
+
+.position {
+	position: relative;
+	text-align: center;
+}
+
+.positionMain {
+	position: relative;
+	text-align: center;
+	;
+}
+
+.voileSoins {
+    position: absolute;
+    top: 0%;
+    width: 234px;
+    height: 234px;
+    background-color: rgba(67, 171, 193, 0.67);
+    border-radius: 50%;
+}
+
+.textcenter2 {
+    text-align: center;
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    line-height: 100%;
+    z-index: 1;
+}
+
+.titresoins2 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: inline-block;
+	width: 100%;
+	margin: auto;
+	font-family: "roboto", sans-serif;
+	font-weight: 400;
+	line-height: 235px;
+	text-align: center;
+	color: #ffffff;
+	z-index: 10;
+}
+
+.descriptionSoins{
+
+	display: flex;
+	align-items: center;
+	padding-top: 80px;
+	margin: 60px auto;
+	width: 90%;
+}
+
+
+.texteSoins p{
+
+	border-radius: 10px;
+	width: 80%;
+	font-family: roboto, sans-serif;
+	font-size: 20px;
+	font-weight: 200;
+	color: #094258;
+	/* padding: 50px 0 50px 50px; */
+	padding-left: 50px;
+	width: 100%;
+	text-align: justify;
+}
+
+
+/* ------------------------------Page RDV------------------------------ */
+#formulairerdv {
+	margin: 100px auto 0 auto;
+}
+#formulairerdv h1{
+	text-align: center;
+	text-transform:uppercase;
+	font-size: 45px;
+	color: #20616e;
+	width: 80%;
+	margin: 0 auto;
+}
+.rdvForm {
+	width: 70%;
+	margin: 100px auto 75px auto;
+}
+
+.rdvForm select {
+	margin: 10px auto;
+	height: 30px;
+	border-radius: 5px;
+	padding-left: 20px;
+	border: 1px solid #c0c0c0;
+	font-size: 12px;
+	max-width: 100%;
+}
+
+.civilitepage {
+	margin-top: 40px;
+}
+
+.civilitepage label {
+	margin-right: 20px;
+}
+
+.inputradio {
+	margin: 0 5px 0 20px;
+}
+
+.formpage {
+	width: 100%;
+	margin: 10px auto;
+	height: 30px;;
+	border-radius: 5px;
+	padding-left: 20px;
+	border: 1px solid #c0c0c0;
+}
+
+.rdvForm textarea {
+	width: 100%;
+	margin: 10px auto;
+	height: 60px;;
+	border-radius: 5px;
+	padding-left: 20px;
+	border: 1px solid #c0c0c0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: 14px;
+	padding-top: 5px;
+}
+
+.heureDate {
+	width: 25%;
+	margin: 10px 20px;
+	height: 30px;;
+	border-radius: 5px;
+	padding-left: 20px;
+	border: 1px solid #c0c0c0;
+}
+
+#sautHeureDate {
+	display: none;
+}
+
+#envoyerpage {
+	margin-top: 10px;
+	float: right;
+	width: 100px;
+	height: 30px;;
+	border: none;
+    color: #ffffff;
+    font-size: 13px;
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: "roboto", open sans;
+    letter-spacing: 0.3em;
+    background: linear-gradient(#396169 0%, #0c4d59 36.82%, #19778a 97.07%, #0d3c45 100%);
+    box-shadow: 0px 3px 6px #000;
+}
+
+#envoyerpage:hover {
+	background: linear-gradient(#3fc2dc 0%, #20616e 100%);
+    box-shadow: 0px 3px 6px #396169;
+}
+
+#retourrdv {
+	font-family: roboto, sans-serif;
+	color: #ffffff;
+	font-size: 23px;
+	text-align: center;
+	margin-bottom: 100px;
+}
+
+.labhd {
+	-webkit-appearance: none;
+}
+
+/* ------------------------------Page Mentions legales------------------------------ */
+#ml {
+	width: 80%;
+	margin: 100px auto 0 auto;
+}
+
+#ml h1{
+	font-size: 35px;
+	color: #20616e;
+	margin-bottom: 75px;
+}
+
+.titreml {
+	font-family: Roboto, sans serif;
+	font-size: 18px;
+	color: #20616e;
+	margin-bottom: 5px;
+	text-align: left;
+}
+
+#ml p{
+	font-family: Roboto, sans serif;
+	font-size: 15px;
+	color: #20616e;
+	margin-bottom: 30px;
+}
+
+#maj {
+	margin-bottom: 200px;
+}
+
+/* ------------------------------FOOTER------------------------------ */
+
+footer {
+	width: 100%;
+	background: linear-gradient(#5be3ff 0%, #51cae3 38.49%, #3d8a9a 100%);
+	margin: auto;
+}
+
+
+.reseaux {
+	text-align: center;
+	padding: 10px 0 0 0;
+}
+
+.reseaux i {
+	font-size: 25px;
+	color: #ffffff;
+	padding: 0 10px;
+	margin: 0 25px;
+}
+
+.reseaux a {
+	color: transparent;
+}
+
+.mentions {
+	text-align: center;
+	margin-top: 20px;
+	padding-bottom: 15px;
+}
+
+.mentions a {
+	font-size: 12px;
+	text-decoration: none;
+    color: #ffffff;
+	line-height: 20px;
+}
+
+.mentions a:hover {
+	text-decoration: underline;
+}
+
+.reseaux i:hover {
+	color:  #006c7a;
+
+}
+
+.mentions a {
+	margin: 0% 20px;
+
+}
+
+
+#hautdepage {
+	opacity: 0;
+	position: fixed;
+	bottom: 10px;
+	right: 50px;	
+	
+} 
+
+#hautdepage i {
+	font-size: 50px;
+	color: #ffffff;
+	margin: 0 17px;
+	border: 2px solid #ffffff;
+	border-radius: 5px;
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	line-height: 60px;
+	padding-top: 8px;
+	background-color: rgba(0, 0, 0, 0.3);
+	transition: all 3s ease-in-out;
+}
+
+
+
+
+
+
+
+/* ----------------------------------------
+  ---------------RESPONSIVE----------------
+------------------------------------------- */
+/*-----------------------------------------------------------TABLETTE-----------------------------------------------------------*/
+
+@media screen and (max-width: 800px){
+
+	#hautdepage i {
+		font-size: 40px;
+		margin: 0;
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		padding-top: 5px;
+	}
+	
+	#hautdepage {
+		right: 10px;	
+		
+	}
+
+/* ----------------RESP. INDEX---------------- */
+
+#intro {
+	height: 70px;
+}
+#intro	p {
+	font-size: 40px;
+}
+
+.ligne {
+	
+	margin-top: 20px;
+}
+
+.position {
+	margin: auto;
+}
+
+#formulaire {
+	text-align: center;
+	display: flex;
+	width: 100%;
+	padding: 30px 0;
+	flex-direction: column;
+}
+
+.carte {
+	margin: 0 auto;
+	padding: 0;
+}
+
+#coordonnees {
+	margin: 0 auto;
+	width: 80%;
+}
+
+.contact {
+	width: 80%;
+}
+
+.contact .msg{
+	width: 100%;
+}
+
+#soins {
+	margin: 20px 0;
+}
+
+#popupCovid {
+	display: none;
+}
+
+.toggle_btn {
+	display: block;
+}
+
+.nav_open {
+	display: block;
+}
+
+nav {
+	display: none;
+}
+
+
+/* ----------------RESP. CLINIQUE---------------- */
+
+	#lignepresentation{
+		display: block;
+		padding: 0;
+	}
+
+	#lignepresentation img {
+		width: 100%;
+	}
+
+	#carreclinique {
+		width: 100%;
+		height: 150px;
+		display: flex;
+		align-items: center;
+	}
+
+	#carreclinique p {
+		margin: 0;
+		font-size: 20px;
+		line-height: 20px;
+		padding: 0 20px;
+	}
+
+	.ligneportraits {	
+		margin-top: 3px;
+	}
+
+	#ligneequipements {
+		display: block;
+	}
+
+	.bloc {
+		width: 100%;
+		margin: 20px auto;
+		padding: 0 20px;
+	}
+
+	.slidershow {
+		width: 100%;
+		height: auto;
+	}
+
+	.navigation {
+		position: relative;
+		bottom: 20px;
+		left: auto;
+		justify-content: center;
+	}
+
+	#main {
+		margin: 0;
+	}
+
+	.ajoutResponsive {
+		display: block;
+		margin: 80px auto 80px 0;	
+	}
+
+	.rectifperso {
+		width: 300px;
+	}
+
+	.card {
+		margin: 20px 3% 20px 20%;
+	}
+
+
+
+
+
+
+/* ----------------RESP. EQUIPE---------------- */
+
+	.metier2{
+		display: none;
+	}
+
+	.metier{
+		display:none;
+	}
+
+	.photoProfil{
+		margin:auto;
+		width: 75%;
+	}
+
+	.photoDoc img {
+		width: 80%;
+		margin: 0 10%;
+
+	}
+  
+	.bouton a{
+		font-size:18px;
+	}
+
+	h4{
+		font-size:14px;
+	}
+
+	.membre-equipe {
+        flex-direction: column;
+    }
+
+    .photoprofil h2 {
+        padding: 20px 0;
+    }
+
+    .btn-env {
+        padding: 20px;
+	}
+	
+	.plusdInfos {
+		display: block;
+		text-align: right;
+		font-size: 20px;
+		color: #20616e;
+		cursor: pointer;
+		margin: 0 auto;
+		font-weight: bold;
+		margin-top: 20px;
+	}
+
+	.infosResp {
+		display: none;
+		font-size: 18px;
+		color: #20616e;
+		padding: 0;
+		width: 100%;
+		text-align: justify;
+	}
+
+	.infosResp h3 {
+		margin: 20px;
+	}
+
+
+/* ----------------RESP. RDV---------------- */
+
+.heureDate {
+	margin: 10px 0;
+}
+
+.labhd {
+	margin-left: 10px;
+}
+
+}
+
+/*-----------------------------------------------------------SMARTPHONE-----------------------------------------------------------*/
+
+@media screen and (max-width: 500px){
+
+#header {
+	height: 78px;
+}
+
+#header	img {
+	width: auto;
+	height: 73PX;
+}
+
+#hautdepage i {
+	font-size: 30px;
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    padding-top: 4px;
+}
+
+#hautdepage {
+	right: 10px;	
+	
+}
+
+/* ----------------RESP. INDEX---------------- */
+
+#slide {
+	margin-bottom: 100px;
+}
+
+#intro {
+	background-color: rgba(255, 255, 255, 0);
+	margin-top: 60px;
+}
+
+#intro p{
+	font-size: 25px;
+	font-family: "roboto", sans serif;
+	text-transform:uppercase;
+	font-weight: 300;
+}
+.contenu {
+	margin-top: 50px;
+}
+
+.contenu h1 {
+    font-size: 30px;
+	line-height: 40px;
+	margin-top: 50px;
+}	
+
+.ligne {
+	flex-direction: column;
+	margin-top: 0;
+}
+
+.contact {
+    width: 100%;
+}
+
+.contenu {
+    width: 90%;
+}
+
+.position {
+	margin: 20px auto;
+}
+
+/* ----------------RESP. SOINS---------------- */
+
+.descriptionSoins {
+	display: block;
+}
+
+.positionMain {
+    width: 234px;
+    margin: auto;
+}
+
+.texteSoins p {
+	margin-top: 20px;
+	padding-left: 0;
+}
+
+#soinsMain h1 {
+	font-size: 25px;
+	margin: 50px auto;
+}
+
+
+
+/* ----------------RESP. EQUIPE---------------- */
+
+#titreEquipe {
+	margin: 50px auto 0 auto;
+}
+
+#titreEquipe h1{
+	font-size: 25px;
+	margin: 0;
+}
+
+.photoDoc {
+	padding-top: 30px;
+}
+
+.photoProfil{
+	margin:auto;
+	width: 90%;
+}
+
+.photoDoc img {
+	width: 100%;
+	margin: 0;
+
+}
+
+/* ----------------RESP. RDV---------------- */
+
+#formulairerdv {
+	margin-top: 50px;
+}
+#formulairerdv h1 {
+	font-size: 25px;
+}
+
+.rdvForm {
+	width: 90%;
+	margin-top: 50px;
+}
+
+.rdvForm select {
+	padding-left: 7px;
+}
+
+.labhd {
+	margin-left: 0px;
+	font-size: 14px;
+}
+
+#retourrdv {
+	display: none;
+}
+
+.heureDate {
+	width: 100%;
+}
+#sautHeureDate {
+	display: block;
+}
+
+
+/* ----------------RESP. CLINIQUE---------------- */
+
+
+#main {
+	margin: 0;
+}
+
+#carreclinique p {
+	font-size: 15px;
+}
+
+.card {
+	margin: 0;
+}
+
+.ajoutResponsive {
+	display: block;
+	margin: 5px auto 50px auto;
+}
+
+}
