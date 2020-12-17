@@ -1,0 +1,80 @@
+{% extends "_template.html.twig" %}
+
+
+{% block title %}
+    Clinique
+{% endblock %}
+
+{% block description %}
+    Site de la clinique dentaire à VILLA DEL CARBON. La clinique se compose de 6 medecins specialisés, du materiels aux normes, et d'un appareil de radiographie.
+{% endblock %}
+
+{% block content %}
+		<section id="formulairerdv">
+			
+            <h1>Prenez rapidement rendez-vous en ligne avec votre spécialiste</h1>
+            
+            <form class="rdvForm">
+                
+                <label>Spécialiste concerné</label><br>
+                <SELECT name="nom" size="1">
+                    <OPTION>Dr Alaniz Garcia - Odontologie intégrale
+                    <OPTION>Dr Alaniz Garcia - Odontologie générale
+                    <OPTION>Dra Alaniz Barrera - Endodontie
+                    <OPTION>Dra Alaniz Paredes - Orthodontie, Orthopédie 
+                    <OPTION>Dra Alaniz Paredes - Periodontie, Implantologie
+                    <OPTION>Dra Alaniz Paredes - Odonthopedriatrie, Orthopedie
+                    <option>Sra Barrera Velasquez - Secrétaire médicale
+                </SELECT><br>
+				<div class="civilitepage">
+					<label>Civilité</label>
+						<input type="radio" class="inputradio" value="f" name="Civilite">Femme
+						<input type="radio" class="inputradio" value="h" name="Civilite">Homme
+				</div><br>
+
+					
+
+				<label for="name"></label>
+					<input class="formpage" type="text" placeholder="Votre Nom" id="name"><br>
+
+					
+
+				<label for="prenom"></label>
+					<input class="formpage" placeholder="Votre Prénom" type="text" id="prenom"><br>
+
+
+					
+
+				<label></label>
+					<input class="formpage" placeholder="Votre Téléphone" type="tel" pattern="^[0-9]{10}$"><br>
+
+					
+
+				<label for="email"></label>
+					<input class="formpage" placeholder="Votre Email" type="email" id="email"><br>
+
+				<label for="motif"></label>
+					<input class="formpage" placeholder="Motif de la consultation souhaitée" type="text" id="motif"><br>
+
+
+					
+
+				<label for="msg"></label>
+		    		<textarea id="msg" placeholder="Message destiné au service" name="user_message"></textarea><br>
+
+                <label class="labhd">Date souhaitée</label>
+                <input type="date" class="heureDate"><span id="sautHeureDate"><br></span>
+
+                <label class="labhd">Heure souhaitée</label>
+                <input type="time" class="heureDate"><span><br></span>
+
+				<input id="envoyerpage" type="submit" value="Envoyer">
+			
+            </form>
+			
+            <div id="retourrdv">
+                <p>Nos equipes reviendront vers vous afin de vous confirmer <br>le rendez-vous ou vous proposer une date ultérieure</p>
+			</div>
+		</section>
+			
+{% endblock %}
