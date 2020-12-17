@@ -78,6 +78,15 @@
     "doctrine/sql-formatter": {
         "version": "1.1.1"
     },
+    "laminas/laminas-code": {
+        "version": "3.5.1"
+    },
+    "laminas/laminas-eventmanager": {
+        "version": "3.3.0"
+    },
+    "laminas/laminas-zendframework-bridge": {
+        "version": "1.1.1"
+    },
     "monolog/monolog": {
         "version": "1.26.0"
     },
@@ -361,6 +370,9 @@
     },
     "twig/twig": {
         "version": "v3.1.1"
+    },
+    "webimpress/safe-writer": {
+        "version": "2.1.0"
     },
     "zendframework/zend-code": {
         "version": "3.4.1"
