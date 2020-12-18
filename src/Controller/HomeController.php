@@ -18,22 +18,18 @@ class HomeController extends AbstractController
     {
         dd('page de test');
     }
-
+ 
     /**
-     * @Route("/", name="pop_up")
+     * @Route("/", name="Home")
      */
     public function index(SessionInterface $session): Response
     {
-        return $this->render('home/popup.html.twig');
-    }
-    
-
-    /**
-     * @Route("/home", name="Home")
-     */
-    public function home(): Response
-    {
-        return $this->render('home/home.html.twig');
+        if( $session->get('actif') ){
+            return $this->render('home/home.html.twig');
+        }else{
+            $session->set('actif', '1');
+            return $this->render('home/popup.html.twig');
+        }
     }
 
     /**
