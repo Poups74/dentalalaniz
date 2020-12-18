@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Form\PatientFormType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -45,23 +46,19 @@ class HomeController extends AbstractController
      */
     public function rendezVous(Request $request, EntityManagerInterface $manager): Response
     {
-        // 1. Créer le formulaire
         $form = $this->createForm(PatientFormType::class);
-        // 2. Passage de la requête au formulaire (récupération des données POST, validation)
         $form->handleRequest($request);
 
-        // 3. Vérifier si le formulaire a été envoyé et est valide
         if ($form->isSubmitted() && $form->isValid()) {
-            // 4. Récupérer les données de formulaire
             $patient = $form->getData();
 
-            // Enregistrement en base de données
             $manager->persist($patient);
             $manager->flush();
+
         }
 
         return $this->render('home/rendez_vous.html.twig',[
-            'patient'=>$patient
+            
         ]);
     }
 }
