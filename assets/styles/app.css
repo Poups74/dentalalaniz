@@ -1021,6 +1021,8 @@ footer {
 	text-align: center;
 	margin-top: 20px;
 	padding-bottom: 15px;
+	display: flex;
+	flex-direction: column;
 }
 
 .mentions a {
