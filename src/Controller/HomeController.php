@@ -2,7 +2,10 @@
 
 namespace App\Controller;
 
+use App\Form\PatientFormType;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -41,8 +44,21 @@ class HomeController extends AbstractController
     /**
      * @Route("/rendez_vous", name="Rendez_vous")
      */
-    public function rendezVous(): Response
+    public function rendezVous(Request $request, EntityManagerInterface $manager): Response
     {
-        return $this->render('home/rendez_vous.html.twig');
+        $form = $this->createForm(PatientFormType::class);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $patient = $form->getData();
+
+            $manager->persist($patient);
+            $manager->flush();
+
+        }
+
+        return $this->render('home/rendez_vous.html.twig',[
+            
+        ]);
     }
 }

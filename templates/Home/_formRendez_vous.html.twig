@@ -1,20 +1,5 @@
-{% extends "_template.html.twig" %}
 
-
-{% block title %}
-    Clinique
-{% endblock %}
-
-{% block description %}
-    Site de la clinique dentaire à VILLA DEL CARBON. La clinique se compose de 6 medecins specialisés, du materiels aux normes, et d'un appareil de radiographie.
-{% endblock %}
-
-{% block content %}
-		<section id="formulairerdv">
-			
-            <h1>Prenez rapidement rendez-vous en ligne avec votre specialiste</h1>
-            
-            {# <form class="rdvForm">
+            <form class="rdvForm">
                 
                 <label>Spécialiste concerné</label><br>
                 <SELECT name="nom" size="1">
@@ -70,12 +55,4 @@
 
 				<input id="envoyerpage" type="submit" value="Envoyer">
 			
-            </form> #}
-            {% include "Home/_formRendez_vous.html.twig" %}
-			
-            <div id="retourrdv">
-                <p>Nos equipes reviendront vers vous afin de vous confirmer <br>le rendez-vous ou vous proposer une date ultérieure</p>
-			</div>
-		</section>
-			
-{% endblock %}
+            </form>
