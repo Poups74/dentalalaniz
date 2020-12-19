@@ -58,7 +58,7 @@ class HomeController extends AbstractController
         }
 
         return $this->render('home/rendez_vous.html.twig',[
-            
+            'patient_form' => $form->createView()
         ]);
     }
 }

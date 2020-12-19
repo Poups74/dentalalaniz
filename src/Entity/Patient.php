@@ -37,6 +37,11 @@ class Patient
      */
     private $Email;
 
+    /**
+     * @ORM\Column(type="string", length=25)
+     */
+    private $civilite;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +91,18 @@ class Patient
     public function setEmail(string $Email): self
     {
         $this->Email = $Email;
+
+        return $this;
+    }
+
+    public function getCivilite(): ?string
+    {
+        return $this->civilite;
+    }
+
+    public function setCivilite(string $civilite): self
+    {
+        $this->civilite = $civilite;
 
         return $this;
     }
