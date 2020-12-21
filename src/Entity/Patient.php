@@ -42,6 +42,16 @@ class Patient
      */
     private $civilite;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $MotifConsultation;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $message;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -103,6 +113,30 @@ class Patient
     public function setCivilite(string $civilite): self
     {
         $this->civilite = $civilite;
+
+        return $this;
+    }
+
+    public function getMotifConsultation(): ?string
+    {
+        return $this->MotifConsultation;
+    }
+
+    public function setMotifConsultation(string $MotifConsultation): self
+    {
+        $this->MotifConsultation = $MotifConsultation;
+
+        return $this;
+    }
+
+    public function getMessage(): ?string
+    {
+        return $this->message;
+    }
+
+    public function setMessage(string $message): self
+    {
+        $this->message = $message;
 
         return $this;
     }
