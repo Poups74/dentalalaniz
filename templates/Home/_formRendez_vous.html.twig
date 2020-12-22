@@ -12,9 +12,7 @@
 	</SELECT><br>
 
 	<div class="civilitepage">
-		{{ form_widget(patient_form.civilite,  {'attr': {'placeholder': 'civilité'}})  }}
-			<input type="radio" class="inputradio" value="f" name="patient_form.civilite">Femme
-			<input type="radio" class="inputradio" value="h" name="patient_form.civilite">Homme
+		{{ form_row(patient_form.civilite)}}
 	</div><br>
 
 		

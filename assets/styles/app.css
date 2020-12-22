@@ -340,6 +340,17 @@ nav {
     font-family: "roboto", open sans;
     font-size: 15px;
 }
+.
+.contact .msg{
+	border-radius: 10px;
+    height: 60px;
+    border: none;
+    width: 80%;
+    margin: 10px;
+    text-align: center;
+    font-family: "roboto", open sans;
+    font-size: 15px;
+}
 
 .contact #envoyer {
     margin: auto;
