@@ -1,0 +1,28 @@
+{% extends "_template.html.twig" %}
+
+
+{% block title %}
+    Ajout Admin
+{% endblock %}
+
+{% block description %}
+    
+{% endblock %}
+
+{% block content %}
+
+    <h1 class="titreConnexion">Ajout d'administrateur</h1>
+
+    {{ form_start(admin_form) }}
+
+        {{ form_row(admin_form.username, { 'label':' ', 'attr': {'class':'formConnexion', 'placeholder': "Nom d\'utilisateur"} } ) }}
+
+        {{ form_row(admin_form.password, { 'label':' ', 'attr': {'class':'formConnexion', 'placeholder': "Password"} } ) }}
+
+        <button type="submit" class="btnConnexion">
+            Enregistrer
+        </button>
+
+    {{ form_end(admin_form) }}
+
+{% endblock %}
