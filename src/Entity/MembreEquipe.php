@@ -17,8 +17,7 @@ class MembreEquipe
      */
     private $id;
 
-
-    /**
+/**
      *@ORM\OneToOne(targetEntity="Image",cascade={"persist","remove"})
      */
     private $image;
@@ -62,6 +61,11 @@ class MembreEquipe
      * @ORM\Column(type="string", length=255)
      */
     private $formation;
+
+    /**
+     * @ORM\Column(type="string", length=20)
+     */
+    private $titre;
 
     public function getId(): ?int
     {
@@ -160,6 +164,38 @@ class MembreEquipe
     public function setFormation(string $formation): self
     {
         $this->formation = $formation;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of image
+     */ 
+    public function getImage(): ?Image
+    {
+        return $this->image;
+    }
+
+    /**
+     * Set the value of image
+     *
+     * @return  self
+     */ 
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    public function getTitre(): ?string
+    {
+        return $this->titre;
+    }
+
+    public function setTitre(string $titre): self
+    {
+        $this->titre = $titre;
 
         return $this;
     }

@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Patient;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
@@ -17,7 +18,7 @@ class PatientsFixtures extends Fixture
 
             ->setNom('NomPatient' . $i)
             ->setPrenom('est' . $i)
-            ->setMail('Mail'. $i . '@gmail.com')
+            ->setEmail('Mail'. $i . '@gmail.com')
             ;
                 
             $manager->persist($patients);
@@ -25,5 +26,7 @@ class PatientsFixtures extends Fixture
             $manager->flush();
 
         }
+
+}
 
 }

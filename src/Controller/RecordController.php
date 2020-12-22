@@ -41,7 +41,7 @@ class RecordController extends AbstractController
     {
         return $this->render(
             'record/consult_list.html.twig',[
-                'variable_test'=> 'Liste des consultations'
+                'variable_test'=> 'Liste des conultations'
             ]
         );
 }
