@@ -4,8 +4,10 @@ namespace App\Form;
 
 use App\Entity\Patient;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TelType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -39,8 +41,10 @@ class PatientFormType extends AbstractType
             ])
             ->add('Telephone',TelType::class)
             ->add('Email', EmailType::class)
-            ->add('civilite')
-        ;
+            ->add('civilite', CheckboxType::class)
+            ->add('MotifConsultation',TextType::class )
+            ->add('message', TextareaType::class)
+            ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
