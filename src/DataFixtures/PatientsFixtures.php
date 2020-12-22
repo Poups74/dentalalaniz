@@ -29,3 +29,5 @@ class PatientsFixtures extends Fixture
     }
 
 }
+
+}

@@ -14,7 +14,6 @@
 {% block content %}
 
 <!-- POPUP COVID DEBUT -->
-
 		<div id="popupCovid">
 			
 			<div class="contenu">
@@ -28,6 +27,8 @@
 				</div>
 			</div>
 	
+			
+
 		</div>
 
 
@@ -186,6 +187,8 @@
 
 {% endblock %}
 
-
+{% block scripts %}
+	{{ encore_entry_script_tags('app_popup') }}
+{% endblock %}
 
 

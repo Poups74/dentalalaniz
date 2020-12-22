@@ -16,29 +16,31 @@
 				<div id="titreEquipe">
 					<h1>Des Professionnels <br>a votre service<h1>
 				</div>
-<!-- -----------------------------DR JAVIER ALANIZ GARCIA---------------------- -->
+
+				{% for membre_equipe in membre_equipe_home %}
+<!-- -----------------------------LISTE DE L'EQUIPE---------------------- -->
 				<!-- qui englobe tous les elements d'un personnel -->
 				<section>
 
 				<!-- correspond au Flexbox gauche -->
-					<div class="container" id="jag">
+					<div class="container" id="{{membre_equipe.id}}">
 						<div class ="photoProfil">
 							<div class="photoDoc">
 								<div class="bouton"><a href="rendez-vous.php">Rendez-vous</a>
 								</div>
-									<img  src="{{ asset('build/images/DrJavierAlanizGarcia.gif') }}"alt="photo du Dr Javier Alaniz Garcia">
-									<h2>Dr Javier Alaniz Garcia</h2>
-									<h4>Odontologie intégrale</h4>
+									<img src={{ asset('/build/images/ImagesSymfony/')~ membre_equipe.image.name }} alt="photo de" {{membre_equipe.titre}}" "{{membre_equipe.prenom}}" "{{membre_equipe.nom}}>
+									<h2> {{membre_equipe.titre}}  {{membre_equipe.prenom}}  {{membre_equipe.nom}} </h2>
+									<h4>{{membre_equipe.specialite}}</h4>
 								<div class="plusdInfos">
 									<p>+ d'informations</p>
 								</div>
 								<div class="infosResp">
-									<h3>Metier :</h3>
-									<p>L'odontologie intégrale est la discipline qui offre aux patient un traitement global et ou personnel qui prend en compte tous les facteurs pouvant intervenir dans les problèmes bucodentaires. elle se charge de diagnostiquer, traiter et prevenir les maladies buccales.</p>
-									<h3>Experience</h3>
-									<p>1982 à aujourd'hui: clinique Alaniz, Villa Del Carbon</p>
+									<h3>Métier :</h3>
+									<p>{{ membre_equipe.descriptionmetier }}</p>
+									<h3>Expérience</h3>
+									<p>{{ membre_equipe.experience }}</p>
 									<h3>Formation</h3>
-									<p>1978-1982 Diplôme de chirurgien dentiste à l'université de la UNAM</p>
+									<p>{{ membre_equipe.formation }}</p>
 									
 								</div>
 							</div>
@@ -48,428 +50,21 @@
 							
 							<div class="metier">
 							<ul>
-								<li><h3>Metier :</h3>
-									<p>L'odontologie intégrale est la discipline qui offre aux patient un traitement global et ou personnel qui prend en compte tous les facteurs pouvant intervenir dans les problèmes bucodentaires. elle se charge de diagnostiquer, traiter et prevenir les maladies buccales.
+								<li><h3>Métier :</h3>
+									<p>{{ membre_equipe.descriptionmetier }}
 									</p>
 								</li>
-								<li><h3>Experience</h3>
-									<p>1982 à aujourd'hui: clinique Alaniz, Villa Del Carbon</p>
+								<li><h3>Expérience</h3>
+									<p>{{ membre_equipe.experience }}</p>
 								</li>
 								<li><h3>Formation</h3>
-									<p>1978-1982 Diplôme de chirurgien dentiste à l'université de la UNAM</p>
+									<p>{{ membre_equipe.formation }}</p>
 								</li>
 							</ul>
 						</div>
 					</div>
 				</section>
-<!-- ------------------AUTRE PERSONNEL DR SAUL ALANIZ GARCIA---------------------- -->
+				{% endfor %}
 
-	<!-- qui englobe tous les renseignements d'un personnel -->
-				<section>
-
-				<!-- correspond au Flexbox gauche -->
-					<div class="container" id="sag">
-						<div class ="photoProfil">
-							<div class="photoDoc">
-								<div class="bouton"><a href="rendez-vous.php">Rendez-vous</a></div>
-								<img  src="{{ asset('build/images/DrSaulAlanizGarcia.gif') }}"alt="photo du Dr Saul Alaniz Garcia">
-								<h2>Dr Saul Alaniz Garcia</h2>
-								<h4>Odontologie intégrale</h4>
-								<div class="plusdInfos">
-									<p>+ d'informations</p>
-								</div>
-								<div class="infosResp">
-									<h3>Metier :</h3>
-									<p>L'odontologie intégrale est la discipline qui offre aux patient un traitement global et ou personnel qui prend en compte tous les facteurs pouvant intervenir dans les problèmes bucodentaires. elle se charge de diagnostiquer, traiter et prevenir les maladies buccales.</p>
-									<h3>Experience</h3>
-									<p>1982 à aujourd'hui: clinique Alaniz, Villa Del Carbon</p>
-									<h3>Formation</h3>
-									<p>1979-1984 Diplôme de chirurgien dentiste à l'université de la UNAM</p>
-									
-								</div>
-							</div>
-						</div>
-
-				<!-- correspond au Flexbox droit -->	
-						<div class="metier">
-							<ul>
-								<li><h3>Metier :</h3>
-									<p>L'odontologie intégrale est la discipline qui offre aux patient un traitement global et ou personnel qui prend en compte tous les facteurs pouvant intervenir dans les problèmes bucodentaires. elle se charge de diagnostiquer, traiter et prevenir les maladies buccales.
-									</p>
-								</li>
-								<li><h3>Experience</h3>
-									<p>1982 à aujourd'hui: clinique Alaniz, Villa Del Carbon</p>
-								</li>
-								<li><h3>Formation</h3>
-									<p>1979-1984 Diplôme de chirurgien dentiste à l'université de la UNAM</p>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</section>
-
-<!-- ------------------AUTRE PERSONNEL DRa ISAURA ALANIZ BARRERA---------------- -->
-
-	<!-- qui englobe tous les renseignements d'un personnel -->
-				<section>
-
-				<!-- correspond au Flexbox gauche -->
-					<div class="container" id="iab">
-						<div class ="photoProfil">
-							<div class="photoDoc">
-								<div class="bouton"><a href="rendez-vous.php">Rendez-vous</a></div>
-								<img  src="{{ asset('build/images/DraIsauraAlanizBarrera.gif') }}"alt="photo du Dra Isaura Alaniz Barrera">
-								<h2>Dra Isaura Alaniz Barrera</h2>
-								<h4>Endodontie</h4>
-								<div class="plusdInfos">
-									<p>+ d'informations</p>
-								</div>
-								<div class="infosResp">
-									<h3>Metier :</h3>
-									<p>L'endodontie est une spécialite centré sur la prévention, le diagnostique et l'évaluation des altérations pulpaires. En accord avec les besoins de chaque patient, les traitements réalisés peuvent être endodontiques et/ou chirurgicaux afin de préserver l'organe dentaire.</p>
-									<h3>Experience</h3>
-									<p>2006 à aujourd'hui: clinique Alaniz, Villa Del Carbon</p>
-									<h3>Formation</h3>
-									<p>2009-2011 : Spécialisation endoperiodontologie à la UNAM<br>
-										2002-2006 : Diplôme en stomatologie à l'université de Justo Sierra</p>
-									
-								</div>
-							</div>
-						</div>
-
-				<!-- correspond au Flexbox droit -->	
-						<div class="metier">
-							<ul>
-								<li><h3>Metier :</h3>
-									<p>l'endodontie est une spécialite centré sur la prévention, le diagnostique et l'évaluation des altérations pulpaires. En accord avec les besoins de chaque patient, les traitements réalisés peuvent être endodontiques et/ou chirurgicaux afin de préserver l'organe dentaire.
-									</p>
-								</li>
-								<li><h3>Experience</h3>
-									<p>2006 à aujourd'hui: clinique Alaniz, Villa Del Carbon</p>
-								</li>
-								<li><h3>Formation</h3>
-									<p>2009-2011 : Spécialisation endoperiodontologie à la UNAM<br>
-										2002-2006 : Diplôme en stomatologie à l'université de Justo Sierra</p>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</section>
-
-<!-- ------------------AUTRE PERSONNEL DRa ARIADNA ALANIZ PAREDES---------------- -->
-
-	<!-- qui englobe tous les renseignements d'un personnel -->
-				<section>
-
-				<!-- correspond au Flexbox gauche -->
-					<div class="container"  id="aap">
-						<div class ="photoProfil">
-							<div class="photoDoc">
-								<div class="bouton"><a href="rendez-vous.php">Rendez-vous</a></div>
-								<img  src="{{ asset('build/images/DraAriadnaAlanizParedes.gif') }}" alt="photo du Dra Ariadna Alaniz Paredes">
-								<h2>Dra Ariadna Alaniz Paredes</h2>
-								<h4>Orthodontie, orthopédie</h4>
-								<div class="plusdInfos">
-									<p>+ d'informations</p>
-								</div>
-								<div class="infosResp">
-									<h3>Metier :</h3>
-									<p>L'orthodontie, qui s'adresse à une patientèle jeune et adulte, est une spécialité de l'odontologie qui prend en charge le diagnostique et le traitement des anomalies de position et relation des structures dento-faciales. L'orthopedie dento-faciale s'adresse au jeune patient et prend en charge le diagnotique , la prévention et le traitement des altérations et/ou des désordres osseux et fonctionnels de la machoire.L'odonthopediatrie est la spécialité que prend en charge les enfants de la naissance à l'adolescence. Cette spécialité met en place des diagnostiques et des traitements précoces moins invasifs pour que l'expérience des enfants soit la plus favorable.</p>
-									<h3>Experience</h3>
-									<p>2001 à aujourd'hui: clinique Alaniz, Villa Del Carbon</p>
-									<h3>Formation</h3>
-									<p>2009-2011 : Diplome Universitaire en Système d'Orthodontie Damon, UNAM<br>
-									2005-2010 : Spécialité en Orthodontie, UNAM<br>
-									1997-2005 : Stomatologie, Université Justo Sierra</p>
-									
-								</div>
-							</div>
-						</div>
-
-				<!-- correspond au Flexbox droit -->	
-						<div class="metier">
-							<ul>
-								<li><h3>Metier :</h3>
-									<p>L'orthodontie, qui s'adresse à une patientèle jeune et adulte, est une spécialité de l'odontologie qui prend en charge le diagnostique et le traitement des anomalies de position et relation des structures dento-faciales. L'orthopedie dento-faciale s'adresse au jeune patient et prend en charge le diagnotique , la prévention et le traitement des altérations et/ou des désordres osseux et fonctionnels de la machoire.L'odonthopediatrie est la spécialité que prend en charge les enfants de la naissance à l'adolescence. Cette spécialité met en place des diagnostiques et des traitements précoces moins invasifs pour que l'expérience des enfants soit la plus favorable.
-									</p>
-								</li>
-								<li><h3>Experience</h3>
-									<p>2001 à aujourd'hui: clinique Alaniz, Villa Del Carbon</p>
-								</li>
-								<li><h3>Formation</h3>
-									<p>2009-2011 : Diplome Universitaire en Système d'Orthodontie Damon, UNAM<br>
-										2005-2010 : Spécialité en Orthodontie, UNAM<br>
-										1997-2005 : Stomatologie, Université Justo Sierra</p>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</section>
-
-<!-- ------------------DRa SELENE ALANIZ PAREDES------------------------------------- -->
-
-	<!-- qui englobe tous les renseignements d'un personnel -->
-				<section>
-
-				<!-- correspond au Flexbox gauche -->
-					<div class="container " id="sap">
-						<div class ="photoProfil">
-							<div class="photoDoc">
-								<div class="bouton"><a href="rendez-vous.php">Rendez-vous</a></div>
-								<img  src="{{ asset('build/images/DraSeleneAlanizParedes.jpeg') }}" alt="photo du DraSelene Alaniz Pareds ">
-								<h2>Dra Selene Alaniz Paredes</h2>
-								<h4>Periodontie, Implantologie</h4>
-								<div class="plusdInfos">
-									<p>+ d'informations</p>
-								</div>
-								<div class="infosResp">
-									<h3>Metier :</h3>
-									<p>la periodontie est une spécialité qui traite les inflammations de la racines et des os, de la gingivites à la periodontite sévère. L'implantologie dentaire est la dicipline qui se consacre à l'implantation chirurgicale de prothèses dentaires dans la structure osseuse maxillaire et mandibulaire.</p>
-									<h3>Experience</h3>
-									<p>2015 à aujourd'hui: clinique Alaniz, Villa Del Carbon</p>
-									<h3>Formation</h3>
-									<p></p>
-									
-								</div>
-							</div>
-						</div>
-
-				<!-- correspond au Flexbox droit -->	
-						<div class="metier">
-							<ul>
-								<li><h3>Metier :</h3>
-									<p>la periodontie est une spécialité qui traite les inflammations de la racines et des os, de la gingivites à la periodontite sévère. L'implantologie dentaire est la dicipline qui se consacre à l'implantation chirurgicale de prothèses dentaires dans la structure osseuse maxillaire et mandibulaire.
-									</p>
-								</li>
-								<li><h3>Experience :</h3>
-									<p>2015 à aujourd'hui: clinique Alaniz, Villa Del Carbon</p>
-								</li>
-								<li><h3>Formation :</h3>
-									<p></p>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</section>
-
-<!-- -----------------DRa AYDEE ALANIZ PAREDES------------------------------------- -->
-
-	<!-- qui englobe tous les renseignements d'un personnel -->
-				<section>
-
-				<!-- correspond au Flexbox gauche -->
-					<div class="container" id="aap">
-						<div class ="photoProfil">
-							<div class="photoDoc">
-								<div class="bouton"><a href="rendez-vous.php">Rendez-vous</a></div>
-								<img  src="{{ asset('build/images/DraSeleneAlanizParedes.jpeg') }}" alt="photo du Dra Aydee Alaniz Paredes">
-								<h2>Dra Aydee Alaniz Paredes</h2>
-								<h4>Odonthopedriatrie, Orthopedie</h4>
-								<div class="plusdInfos">
-									<p>+ d'informations</p>
-								</div>
-								<div class="infosResp">
-									<h3>Metier :</h3>
-									<p>L'odonthopediatrie est la spécialité que prend en charge les enfants de la naissance à l'adolescence. Cette spécialité met en place des diagnostiques et des traitements précoces moins invasifs pour que l'expérience des enfants soit la plus favorable.</p>
-									<h3>Experience</h3>
-									<p>2015 à aujourd'hui: clinique Alaniz, Villa Del Carbon</p>
-									<h3>Formation</h3>
-									<p>2012-2014 : Spécialité en odontopédiatrie<br>
-
-										2011-2012 : Diplôme d'actualisation profesionnel en diagnostique et traitement aux patients avec une incapacité à l'UNAM<br>
-										
-										2004-2009 : Diplôme en stomatologie à l'universite Justo Sierra</p>
-									
-								</div>
-							</div>
-						</div>
-
-				<!-- correspond au Flexbox droit -->	
-						<div class="metier">
-							<ul>
-								<li><h3>Metier :</h3>
-									<p>L'odonthopediatrie est la spécialité que prend en charge les enfants de la naissance à l'adolescence. Cette spécialité met en place des diagnostiques et des traitements précoces moins invasifs pour que l'expérience des enfants soit la plus favorable.
-									</p>
-								</li>
-								<li><h3>Experience</h3>
-									<p>2015 à aujourd'hui: clinique Alaniz, Villa Del Carbon</p>
-								</li>
-								<li><h3>Formation</h3>
-									<p>2012-2014 : Spécialité en odontopédiatrie<br>
-
-										2011-2012 : Diplôme d'actualisation profesionnel en diagnostique et traitement aux patients avec une incapacité à l'UNAM<br>
-										
-										2004-2009 : Diplôme en stomatologie à l'universite Justo Sierra</p>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</section>
-
-<!-- -----------------SRa ISAURA BARRERA VELASQUEZ------------------------------------ -->
-
-	<!-- qui englobe tous les renseignements d'un personnel -->
-				<section>
-
-				<!-- correspond au Flexbox gauche -->
-					<div class="container" id="ibv">
-						<div class="photoProfil">
-							<div class="photoDoc">
-								<div class="bouton"><a href="rendez-vous.php">Rendez-vous</a></div>
-								<img  src="{{ asset('build/images/IsauraBarreraVelasquez.gif') }}" alt="photo de Sra Isaura Barrera Velasquez">
-								<h2>Sra Isaura Barrera Velasquez</h2>
-								<h4>Secrétaire médicale</h4>
-								<div class="plusdInfos">
-									<p>+ d'informations</p>
-								</div>
-								<div class="infosResp">
-									<h3>Metier :</h3>
-									<p>La secrétaire médicale est le bras droit du médecin. L’aide à la personne et le soin représentent ses priorités. Elle cherche toujours à rendre service, pour apporter soulagement et bien-être. Elle doit être à l’écoute des patients et de leur famille, afin de les rassurer et de les guider en conséquence. Pour chaque patient, elle recueille aussi toutes les informations nécessaires à la constitution de son dossier médical.</p>
-									<h3>Experience</h3>
-									<p>1981 à aujourd'hui: clinique Alaniz, Villa Del Carbon</p>
-									
-									
-								</div>
-							</div>
-						</div>
-
-				<!-- correspond au Flexbox droit -->	
-						<div class="metier">
-							<ul>
-								<li><h3>Metier :</h3>
-									<p>La secrétaire médicale est le bras droit du médecin. L’aide à la personne et le soin représentent ses priorités. Elle cherche toujours à rendre service, pour apporter soulagement et bien-être. Elle doit être à l’écoute des patients et de leur famille, afin de les rassurer et de les guider en conséquence. Pour chaque patient, elle recueille aussi toutes les informations nécessaires à la constitution de son dossier médical.
-									</p>
-								</li>
-								<li><h3>Experience</h3>
-									<p>1981 à aujourd'hui: clinique Alaniz, Villa Del Carbon</p>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</section>
-
-<!-- ------------------SRA DELIA MIRANDA------------------------------------- -->
-
-	<!-- qui englobe tous les renseignements d'un personnel -->
-				<section>
-
-				<!-- correspond au Flexbox gauche -->
-					<div class="container" id="dm">
-						<div class ="photoProfil">
-							<div class="photoDoc">
-								<img src= "{{ asset('build/images/SraDeliaMiranda.gif') }}" alt="photo du Sra Delia Miranda">
-								<h2>Sra Delia Miranda Hernandez</h2>
-								<h4>Assistante dentaire</h4>
-								<div class="plusdInfos">
-									<p>+ d'informations</p>
-								</div>
-								<div class="infosResp">
-									<h3>Metier :</h3>
-									<p>L'assistant(e) dentaire prépare l'ensemble des instruments, matériaux et matériels nécessaires à l'intervention du praticien. Il ou elle assure l'assistance technique du professionnel, reçoit, accueille les patients et fixe les rendez-vous ; il ou elle actualise et classe les fichiers des dossiers.</p>
-									<h3>Experience</h3>
-									<p>1981 à aujourd'hui: clinique Alaniz, Villa Del Carbon</p>
-									
-									
-								</div>
-							</div>
-						</div>
-
-				<!-- correspond au Flexbox droit -->	
-						<div class="metier">
-							<ul>
-								<li><h3>Metier :</h3>
-									<p>L'assistant(e) dentaire prépare l'ensemble des instruments, matériaux et matériels nécessaires à l'intervention du praticien. Il ou elle assure l'assistance technique du professionnel, reçoit, accueille les patients et fixe les rendez-vous ; il ou elle actualise et classe les fichiers des dossiers.</p>
-								</li>
-								<li><h3>Experience</h3>
-									<p>1981 à aujourd'hui: clinique Alaniz, Villa Del Carbon</p>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</section>
-
-<!-- ------------------SRita DANIELA LEON MIRANDA------------------------------------- -->
-
-	<!-- qui englobe tous les renseignements d'un personnel -->
-				<section>
-
-				<!-- correspond au Flexbox gauche -->
-					<div class="container" id="dlm">
-						<div class ="photoProfil">
-							<div class="photoDoc">
-								<img  src="{{ asset('build/images/SritaDanielaLeon.gif') }}" alt="photo du Srita Daniela Leon Miranda">
-								<h2>Srita Daniela Leon Miranda</h2>
-								<h4>Assistante dentaire</h4>
-								<div class="plusdInfos">
-									<p>+ d'informations</p>
-								</div>
-								<div class="infosResp">
-									<h3>Metier :</h3>
-									<p>L'assistant(e) dentaire prépare l'ensemble des instruments, matériaux et matériels nécessaires à l'intervention du praticien. Il ou elle assure l'assistance technique du professionnel, reçoit, accueille les patients et fixe les rendez-vous ; il ou elle prépare, constitue, actualise et classe les fichiers des dossiers.</p>
-									<h3>Experience</h3>
-									<p>2015 à aujourd'hui: clinique Alaniz, Villa Del Carbon</p>
-									
-									
-								</div>
-							</div>
-						</div>
-
-				<!-- correspond au Flexbox droit -->	
-						<div class="metier">
-							<ul>
-								<li><h3>Metier :</h3>
-									<p>L'assistant(e) dentaire prépare l'ensemble des instruments, matériaux et matériels nécessaires à l'intervention du praticien. Il ou elle assure l'assistance technique du professionnel, reçoit, accueille les patients et fixe les rendez-vous ; il ou elle prépare, constitue, actualise et classe les fichiers des dossiers.
-									</p>
-								</li>
-								<li><h3>Experience</h3>
-									<p>2015 à aujourd'hui: clinique Alaniz, Villa Del Carbon</p>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</section>
-
-<!-- ------------------Sr ALFONSO MIRANDA CERON------------------------------------- -->
-
-	<!-- qui englobe tous les renseignements d'un personnel -->
-				<section>
-
-				<!-- correspond au Flexbox gauche -->
-					<div class="container ancre" id="amc">
-						<div class ="photoProfil">
-							<div class="photoDoc">
-								<img  src="{{ asset('build/images/AlfonsoMirandaCeron.gif') }}" alt="photo du Sr Alfonso Miranda Ceron">
-								<h2>Sr Alfonso Miranda Ceron</h2>
-								<h4>Technicien prothésiste dentaire</h4>
-								<div class="plusdInfos">
-									<p>+ d'informations</p>
-								</div>
-								<div class="infosResp">
-									<h3>Metier :</h3>
-									<p>Le technicien prothésiste dentaire reçoit l'empreinte et identifie les données de la commande du praticien dentaire. Il est en charge de la conception conception de l'élément prothétique (décontamination de l'empreinte négative, fabrication du maître modèle, du socle d'appui, mise en articulation. Enfin, il conçoit le système définitif de l'élément prothétique dentaire fait l'élément prothétique définitif, fait le système d'ancrage et procède au montage.</p>
-									<h3>Experience</h3>
-									<p>1995 à aujourd'hui: clinique Alaniz, Villa Del Carbon</p>
-								
-									
-								</div>
-							</div>
-						</div>
-
-				<!-- correspond au Flexbox droit -->	
-						<div class="metier">
-							<ul>
-								<li><h3>Metier :</h3>
-									<p> Le technicien prothésiste dentaire reçoit l'empreinte et identifie les données de la commande du praticien dentaire. Il est en charge de la conception conception de l'élément prothétique (décontamination de l'empreinte négative, fabrication du maître modèle, du socle d'appui, mise en articulation. Enfin, il conçoit le système définitif de l'élément prothétique dentaire fait l'élément prothétique définitif, fait le système d'ancrage et procède au montage.
-									
-									</p>
-								</li>
-								<li><h3>Experience</h3>
-									<p>1995 à aujourd'hui: clinique Alaniz, Villa Del Carbon</p>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</section>
-				
 
 	{% endblock %}
