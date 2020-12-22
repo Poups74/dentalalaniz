@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>{% block title %} ### {% endblock %} | DENTAL ALANIZ</title>
+		<meta charset="utf-8">
+		<meta name="description" content={% block description %} ### {% endblock %}>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@300&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" type="image/png" href="{{ asset('build/images/favicon.png')}}"/>
+
+		{{ encore_entry_link_tags('app') }}
+	</head>
+
+	<body>
+
+		{% block nav %}
+		{% endblock %}
+
+		{% block content %}
+		{% endblock %}
+
+		{% block footer %}
+		{% endblock %}
+
+		{{ encore_entry_script_tags('app') }}
+		{% block scripts %}
+		{% endblock %}
+
+	</body>
+
+
+
+</html>
+
+	
+	
