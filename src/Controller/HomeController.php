@@ -7,16 +7,32 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
     /**
+     * @Route("/test", name="test")
+     * 
+     */
+    public function test(SessionInterface $session): Response
+    {
+        dd('page de test');
+    }
+ 
+    /**
      * @Route("/", name="Home")
      */
-    public function index(): Response
+    public function index(SessionInterface $session): Response
     {
-        return $this->render('home/home.html.twig');
+        if( $session->get('actif') ){
+            return $this->render('home/home.html.twig');
+        }else{
+            $session->set('actif', '1');
+            return $this->render('home/popup.html.twig');
+        }
     }
 
     /**
