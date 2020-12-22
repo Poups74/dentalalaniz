@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Patient;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -41,9 +42,19 @@ class PatientFormType extends AbstractType
             ])
             ->add('Telephone',TelType::class)
             ->add('Email', EmailType::class)
-            ->add('civilite', CheckboxType::class)
-            ->add('MotifConsultation',TextType::class )
-            ->add('message', TextareaType::class)
+            ->add('civilite', ChoiceType::class,[
+                'choices'=>[
+                    'femme'=>'f',
+                    'homme'=>'h'
+                ],
+                'expanded'=>true
+            ])
+            ->add('MotifConsultation',TextType::class,[
+                'mapped'=>false
+            ] )
+            ->add('message', TextareaType::class,[
+                'mapped'=>false
+            ])
             ;
     }
 
