@@ -334,17 +334,6 @@ nav {
     font-family: "roboto", open sans;
     font-size: 15px;
 }
-.
-.contact .msg{
-	border-radius: 10px;
-    height: 60px;
-    border: none;
-    width: 80%;
-    margin: 10px;
-    text-align: center;
-    font-family: "roboto", open sans;
-    font-size: 15px;
-}
 
 .contact #envoyer {
     margin: auto;
@@ -1397,6 +1386,14 @@ nav {
 	margin-left: 10px;
 }
 
+/* --------------Connexion admin-------------- */
+
+.ConnexionForm {
+	margin: 90px 20%;
+}
+ .info_message {
+	 width: 70%;
+ }
 }
 
 /*-----------------------------------------------------------SMARTPHONE-----------------------------------------------------------*/
@@ -1573,5 +1570,22 @@ nav {
 	display: block;
 	margin: 5px auto 50px auto;
 }
+
+/* --------------Connexion admin-------------- */
+
+.ConnexionForm {
+	margin: 90px 5%;
+}
+
+.info_message {
+	width: 70%;
+	text-align: center;
+}
+
+#coordHeader {
+	display: none;
+}
+
+
 
 }
