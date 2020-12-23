@@ -54,7 +54,7 @@ class HomeController extends AbstractController
             $manager->flush();
         }
 
-        if ($session->get('actif')) {
+        if ( $session->get('actif') ) {
             return $this->render('home/home.html.twig', [
                 'patient' => $formHome->createView()
             ]);
@@ -64,6 +64,7 @@ class HomeController extends AbstractController
                 'patient' => $formHome->createView()
             ]);
         }
+        
     }
 
     
@@ -129,11 +130,11 @@ class HomeController extends AbstractController
 
             $manager->persist($patient);
 
-            $this->addFlash('message', 'Votre message a été transmis, nous vous répondrons dans les meilleurs délais.');
+            $this->addFlash('info', 'Votre message a été transmis, nous vous répondrons dans les meilleurs délais.');
             $manager->flush();
         }
         return $this->render('home/rendez_vous.html.twig', [
-            'patient' => $form->createView()
+            'patient_form' => $form->createView()
         ]);
     }
 
