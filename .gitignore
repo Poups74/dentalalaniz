@@ -1,4 +1,6 @@
 **/*.code-workspace
+/public/images/*
+!/public/images/.gitignore
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
