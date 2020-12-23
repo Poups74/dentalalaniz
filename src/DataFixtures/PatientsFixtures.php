@@ -30,4 +30,3 @@ class PatientsFixtures extends Fixture
 
 }
 
-}
