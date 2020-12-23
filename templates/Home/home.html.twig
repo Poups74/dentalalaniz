@@ -34,6 +34,10 @@
 
 	<!-- POPUP COVID FIN -->
 
+
+
+					
+
 		<section id="slide">
 			<img src="{{ asset('build/images/Clinica-Dentalaniz.jpg') }}" alt="photo-equipe">
 			<div id="intro">
@@ -139,60 +143,48 @@
 				</div>
 			</section>
 
-			{# <form class="contact"> #}
-			{{ form_start(patient, {'attr': {'class': 'contact'}}) }}
-
-				{# <div class="civilite">
+			<form class="contact">
+				<div class="civilite">
 					<label>Civilité</label>
 						<input type="radio" value="f" name="Civilite">Femme
 						<input type="radio" value="h" name="Civilite">Homme
-				</div> #}
-				<div class="civilite">
-					{{ form_row(patient.civilite)}}
-				</div><br>
-					
-
-				{# <label for="name"></label> #}
-					{# <input class="form" type="text" placeholder="Votre Nom" id="name"> #}
-				{{ form_widget(patient.Nom, {'attr': {'placeholder': 'votre Nom', 'class': 'form'}})  }}
+				</div>
 
 					
-{# 
+
+				<label for="name"></label>
+					<input class="form" type="text" placeholder="Votre Nom" id="name">
+
+					
+
 				<label for="prenom"></label>
-					<input class="form" placeholder="Votre Prénom" type="text" id="prenom"> #}
-				{{ form_widget(patient.Prenom, {'attr': {'placeholder': 'votre prénom', 'class': 'form'}})  }}
+					<input class="form" placeholder="Votre Prénom" type="text" id="prenom">
 
 
 					
 
-				{# <label></label>
-					<input class="form" placeholder="Votre Téléphone" type="tel" pattern="^[0-9]{10}$"> #}
-				{{ form_widget(patient.Telephone, {'attr': {'placeholder': 'votre téléphone', 'class': 'form'}})  }}
+				<label></label>
+					<input class="form" placeholder="Votre Téléphone" type="tel" pattern="^[0-9]{10}$">
 
 					
 
-				{# <label for="email"></label>
-					<input class="form" placeholder="Votre Email" type="email" id="email"> #}
-				{{ form_widget(patient.Email, {'attr': {'placeholder': 'votre email', 'class': 'form'}})  }}
+				<label for="email"></label>
+					<input class="form" placeholder="Votre Email" type="email" id="email">
 
 				<label for="motif"></label>
 					<input class="form" placeholder="Motif" type="text" id="motif">
-				{{ form_widget(patient.MotifConsultation, {'attr': {'placeholder': 'Modif', 'class': 'form'}})  }}
 
 
 					
 
-				{# <label for="msg"></label>
-		    		<textarea id="msg" placeholder="Message" name="user_message"></textarea> #}
-				{{ form_widget(patient.message, {'attr': {'placeholder': 'Entré votre message', 'id': 'msg'}})  }}
+				<label for="msg"></label>
+		    		<textarea id="msg" placeholder="Message" name="user_message"></textarea>
 
 		    		
 
 					<input id="envoyer" type="submit" value="Envoyer">
 			
-			{# </form> #}
-			{{ form_end(patient) }}
-
+			</form>
 			
 
 		</section>

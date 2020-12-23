@@ -12,9 +12,6 @@
 
 
 {% block content %}
-
-
-
     <section id="main">
 			<div id="lignepresentation">
 				<img src="{{ asset('build/images/DSC07696.gif') }}" alt="Co-fondateurs de la clinique devant l'enseigne">
@@ -25,27 +22,155 @@
 			</div>
 
 			<h1>Notre Equipe Médicale</h1>
-
-
-
 			<div class="ligneportraits">
-			{% for membre_equipe in membre_equipe_home %}
 				<div class="card middle">
 					<div class="front">
-						<img src={{ asset('/build/images/ImagesSymfony/')~ membre_equipe.image.name }} alt="Photo du Sra Isaura Alaniz Barrera">
+						<img src="{{ asset('build/images/IsauraBarreraVelasquez.jpg') }}" alt="Photo du Sra Isaura Alaniz Barrera">
 					</div>
 					<div class="back">
 					<div class="back-content middle">
-						<p>{{membre_equipe.titre}}  {{membre_equipe.prenom}} <br>{{membre_equipe.nom}}</p>  
-						<div class="sm"><a href="{{ path('Equipe') ~ '#' ~ membre_equipe.id }}"><i class="fas fa-id-card"></i></a></div> 
+						<p>Sra Isaura <br>BARRERA VELASQUEZ</p>
+						<div class="sm"><a href="equipe.html#ibv"><i class="fas fa-id-card"></i></a></div> 
 						</div>
 					</div>
 				</div>
 				<div class="ajoutResponsive">
-					<a href="equipe.html#ibv"><p class="rectifperso">{{membre_equipe.titre}}  {{membre_equipe.prenom}} <br>{{membre_equipe.nom}}</p></a>
+					<a href="equipe.html#ibv"><p class="rectifperso">Dra Isaura <br>BARRERA VELASQUEZ</p></a>
 				</div>
-			{% endfor %}
-				
+
+				<div class="card middle">
+					<div class="front">
+						<img src="{{ asset('build/images/DrJavierAlanizGarcia.jpg') }}" alt="Photo du Dr Javier Alaniz Garcia">
+					</div>
+					<div class="back">
+					<div class="back-content middle">
+						<p>Dr Javier <br>ALANIZ GARCIA</p>
+						<div class="sm"><a href="equipe.html#jag"><i class="fas fa-id-card"></i></a></div> 
+						</div>
+					</div>
+				</div>
+				<div class="ajoutResponsive">
+					<a href="equipe.html#jag"><p class="rectifperso">Dr Javier <br>ALANIZ GARCIA</p></a>
+				</div>
+
+				<div class="card middle">
+					<div class="front">
+						<img src="{{ asset('build/images/AriadnaAlanizParedes.jpg') }}" alt="Photo Dra Ariadna Alaniz Paredes">
+					</div>
+					<div class="back">
+					<div class="back-content middle">
+						<p>Dra Adriana <br>ALANIZ PAREDES</p>
+						<div class="sm"><a href="equipe.html#aap"><i class="fas fa-id-card"></i></a></div> 
+						</div>
+					</div>
+				</div>
+				<div class="ajoutResponsive">
+					<a href="equipe.html#aap"><p class="rectifperso">Dra Adriana <br>ALANIZ PAREDES</p></a>
+				</div>
+
+				<div class="card middle">
+					<div class="front">
+						<img src="{{ asset('build/images/SraDanielaLeon.jpg') }}" alt="Photo du Srita Daniela Leon Miranda">
+					</div>
+					<div class="back">
+					<div class="back-content middle">
+						<p>Srita Danièla <br>LEON MIRANDA</p>
+						<div class="sm"><a href="equipe.html#dlm"><i class="fas fa-id-card"></i></a></div> 
+						</div>
+					</div>
+				</div>
+				<div class="ajoutResponsive">
+					<a href="equipe.html#dlm"><p class="rectifperso">Srita Danièla <br>LEON MIRANDA</p></a>
+				</div>
+				<div class="card middle">
+					<div class="front">
+						<img src="{{ asset('build/images/SraDanielaLeon.jpg') }}"src="img/SaulAlanizGarcia.jpg" alt="Photo dU Dr Saul Alaniz Garcia">
+					</div>
+					<div class="back">
+					<div class="back-content middle">
+						<p>Dr Saul <br>ALANIZ GARCIA</p>
+						<div class="sm"><a href="equipe.html#sag"><i class="fas fa-id-card"></i></a></div> 
+						</div>
+					</div>
+				</div>
+				<div class="ajoutResponsive">
+					<a href="equipe.html#sag"><p class="rectifperso">Dr Saul <br>ALANIZ GARCIA</p></a>
+				</div>
+
+				<div class="card middle">
+					<div class="front">
+						<img src="{{ asset('build/images/DraIsauraAlanizBarrera.jpg') }}" alt="Photo Dra Isaura Alaniz Barrera">
+					</div>
+					<div class="back">
+					<div class="back-content middle">
+						<p>Dra Isaura <br>ALANIZ BARRERA</p>
+						<div class="sm"><a href="equipe.html#iab"><i class="fas fa-id-card"></i></a></div> 
+						</div>
+					</div>
+				</div>
+				<div class="ajoutResponsive">
+					<a href="equipe.html#iab"><p class="rectifperso">Dra Isaura <br>ALANIZ BARRERA</p></a>
+				</div>
+
+				<div class="card middle">
+					<div class="front">
+						<img src="{{ asset('build/images/SeleneAlanizParedes.jpeg') }}" alt="Photo du Dra Selene Alaniz Paredes">
+					</div>
+					<div class="back">
+					<div class="back-content middle">
+						<p>Dra Selene <br>ALANIZ PAREDES</p>
+						<div class="sm"><a href="equipe.html#sap"><i class="fas fa-id-card"></i></a></div> 
+						</div>
+					</div>
+				</div>
+				<div class="ajoutResponsive">
+					<a href="equipe.html#sap"><p class="rectifperso">Dra Selene <br>ALANIZ PAREDES</p></a>
+				</div>
+
+				<div class="card middle">
+					<div class="front">
+						<img src="{{ asset('build/images/SraDeliaMiranda.jpg') }}" alt="Photo du Sra Delia Miranda">
+					</div>
+					<div class="back">
+					<div class="back-content middle">
+						<p>Sra Delia <br>MIRANDA</p>
+						<div class="sm"><a href="equipe.html#dm"><i class="fas fa-id-card"></i></a></div> 
+						</div>
+					</div>
+				</div>
+				<div class="ajoutResponsive">
+					<a href="equipe.html#dm"><p class="rectifperso">Sra Delia <br>MIRANDA</p></a>
+				</div>
+
+				<div class="card middle">
+					<div class="front">
+						<img src="{{ asset('build/images/AlfonsoMirandaCeron.jpg') }}" alt="Photo du Sr Alfonso Miranda Ceron">
+					</div>
+					<div class="back">
+					<div class="back-content middle">
+						<p>Sr Alfonso <br>MIRANDA CERON</p>
+						<div class="sm"><a href="equipe.html#amc"><i class="fas fa-id-card"></i></a></div> 
+						</div>
+					</div>
+				</div>
+				<div class="ajoutResponsive">
+					<a href="equipe.html#amc"><p class="rectifperso">Sr Alfonso <br>MIRANDA CERON</p></a>
+				</div>
+
+				<div class="card middle">
+					<div class="front">
+						<img src="{{ asset('build/images/anonyme.jpg') }}" alt="Icone d'une personne anonyme">
+					</div>
+					<div class="back">
+					<div class="back-content middle">
+						<p>Dra Aydee <br>ALANIZ PAREDES</p>
+						<div class="sm"><a href="equipe.html#aap"><i class="fas fa-id-card"></i></a></div> 
+						</div>
+					</div>
+				</div>
+				<div class="ajoutResponsive">
+					<a href="equipe.html#aap"><p class="rectifperso">Dra Aydee <br>ALANIZ PAREDES</p></a>
+				</div>
 			</div>
 		</section>
 
