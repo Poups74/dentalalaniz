@@ -155,21 +155,6 @@ nav {
 	background: linear-gradient(#396169 0%, #276d7c 35.55%, #19778a 100%);
 }
 
-#head_coord{
-	position: absolute;
-	top: 0px;
-	right: 20px;
-	z-index: 10;
-	text-align: center;
-	line-height: 23px;
-	margin: 38px auto;
-}
-
-#head_coord i{
-	margin-right: 10px;
-}
-
-
 
 /* ----------------------------------------------------------------------- */
 
@@ -1047,8 +1032,6 @@ footer {
 	text-align: center;
 	margin-top: 20px;
 	padding-bottom: 15px;
-	display: flex;
-	flex-direction: column;
 }
 
 .mentions a {
