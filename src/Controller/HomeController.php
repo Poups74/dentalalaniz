@@ -106,13 +106,15 @@ class HomeController extends AbstractController
         
         if ($form->isSubmitted() && $form->isValid()) {
             $patient = $form->getData();
+            $specialiste = $form->get('specialiste')->getData();
+
             $motif = $form->get('MotifConsultation')->getData();
             $message = $form->get('message')->getData();
             // dd($patient);
             
 
 
-            $message = (new TemplatedEmail())
+            $email = (new TemplatedEmail())
                 // On attribue l'expéditeur
                 ->from('noreply@jacquot-sebastien.fr')
                 // On attribue le destinataire
@@ -121,11 +123,12 @@ class HomeController extends AbstractController
                 ->context([
                     'patient'=>$patient,
                     'motif'=> $motif,
-                    'message'=>$message
+                    'message'=>$message,
+                    'specialiste'=>$specialiste
                     ])
                 
             ;
-            $mailer->send($message);
+            $mailer->send($email);
 
 
             $manager->persist($patient);

@@ -55,6 +55,18 @@ class PatientFormType extends AbstractType
             ->add('message', TextareaType::class,[
                 'mapped'=>false
             ])
+            ->add('specialiste', ChoiceType::class,[
+                'mapped'=>false,
+                'choices'=>[
+                    'Dr Alaniz Garcia - Odontologie intégrale'=>'Dr Alaniz Garcia',
+                    'Dr Alaniz Garcia - Odontologie générale'=>'Dr Alaniz Garcia',
+                    'Dra Alaniz Barrera - Endodontie'=>'Dr Alaniz Barrera',
+                    'Dra Alaniz Paredes - Orthodontie, Orthopédie'=>'Dra Alaniz Paredes',
+                    'Dra Alaniz Paredes - Periodontie, Implantologie'=>'Dra Alaniz Paredes',
+                    'Dra Alaniz Paredes - Odonthopedriatrie, Orthopedie'=>'Dra Alaniz Paredes',
+                    'Sra Barrera Velasquez - Secrétaire médicale'=>'Sra Barrera Velasquez'
+                ]
+            ])
             ;
     }
 
