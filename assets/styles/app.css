@@ -119,7 +119,7 @@ body {
 
 header {
 	width: 100%;
-	height: 142px;
+	height: 150px;
 	margin: auto;
 	background: linear-gradient(#5be3ff 0%, #51cae3 38.49%, #3d8a9a 100%);
 }
@@ -127,7 +127,7 @@ header {
 header img {
 	margin: auto;
 	display: block;
-	padding-top: 6px;
+	padding-top: 10px;
 }
 
 nav {
@@ -153,6 +153,15 @@ nav {
 	width: 25%;
 	height: 46px;
 	background: linear-gradient(#396169 0%, #276d7c 35.55%, #19778a 100%);
+}
+
+#coordHeader{
+	position: absolute;
+	top: 0;
+	right: 0;
+	text-align: center;
+	line-height: 22px;
+	margin: 42px 15px;
 }
 
 
@@ -991,6 +1000,74 @@ section{
 #maj {
 	margin-bottom: 200px;
 }
+
+/* ------------------------ Connexion admin-------------------------- */
+.titreConnexion{
+	margin: 50px auto;
+}
+
+.ConnexionForm {
+	margin: 90px 30%;
+
+}
+
+.formConnexion {
+	width: 100%;
+	line-height: 35px;
+	margin: 10px auto;
+	padding: 0 10px ;
+	border: 1px solid rgb(124, 124, 124);
+	border-radius: 5px;
+	font-size: 17px;
+	color: #57919c;
+}
+
+.btnConnexion {
+	margin: 30px auto;
+	width: 140px;
+	height: 30px;;
+	border: none;
+    color: #ffffff;
+    font-size: 13px;
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: "roboto", open sans;
+    letter-spacing: 0.3em;
+    background: linear-gradient(#396169 0%, #0c4d59 36.82%, #19778a 97.07%, #0d3c45 100%);
+    box-shadow: 0px 3px 6px #000;
+}
+
+.btnConnexion:hover {
+	background: linear-gradient(#3fc2dc 0%, #20616e 100%);
+    box-shadow: 0px 3px 6px #396169;
+}
+
+.info_message {
+	width: 40%;
+	margin: 0 auto;
+	margin-bottom: -70px;
+
+	line-height: 40px;
+	border-radius: 5px;
+	border: 1px solid rgb(114, 230, 151);
+	padding: 0 10px;
+	color: green;
+	background-color: rgb(159, 226, 182);
+}
+
+.error_message{
+	width: 40%;
+	margin: 0 auto;
+	margin-bottom: -70px;
+	line-height: 40px;
+	border-radius: 5px;
+	border: 1px solid rgb(230, 114, 114);
+	padding: 0 10px;
+	color: red;
+	background-color: rgb(226, 159, 159);
+}
+
 
 /* ------------------------------FOOTER------------------------------ */
 
