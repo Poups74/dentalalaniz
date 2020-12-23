@@ -115,7 +115,7 @@ class HomeController extends AbstractController
                 // On attribue l'expéditeur
                 ->from('noreply@jacquot-sebastien.fr')
                 // On attribue le destinataire
-                ->to()
+                ->to('tooky972mada@gmail.com')
                 ->htmlTemplate('emails/contact.html.twig')
                 ->context([
                     'patient'=>$patient,
@@ -133,12 +133,12 @@ class HomeController extends AbstractController
             $manager->flush();
         }
         return $this->render('home/rendez_vous.html.twig', [
-            'patient_form' => $form->createView()
+            'patient' => $form->createView()
         ]);
     }
 
 
-        
+           
 /**
 *  @Route("/clinique", name="Clinique")     
 */
