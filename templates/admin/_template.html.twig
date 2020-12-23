@@ -1,1 +1,48 @@
-{% extends "_template.html.twig" %}
+{% extends "base.html.twig" %}
+
+{% block nav %}
+
+    	<header id="header">
+			<a href="{{ path('Home')}}">
+				<img src="{{ asset('build/images/logo.png') }}" alt="logo">
+			</a>
+		</header>
+		<nav id="navigation">
+			<a href="{{ path('Home')}}" id="dv" >
+				<div></div>
+			</a>
+			
+			<a href="#" class="boutonmenu">
+				<p>Equipe</p>
+			</a>
+
+            <a href="{{path('patient_list')}}"  class="boutonmenu">
+				<p>Patients</p>
+			</a>
+
+			<a href="#" class="boutonmenu">
+				<p>Déconnexion</p>
+			</a>
+
+</div>
+
+		</nav>
+
+	<!-- MENU BURGER -->
+
+		<div class="toggle_btn">
+			<i class="fas fa-bars"></i>
+		</div>
+
+		<div class="menu nav">
+			<a href="index.html">Accueil</a>
+			<a href="#">Equipe</a>
+			<a href="{{path('patient_list')}}">Patients</a>
+			<a href="#">Déconnexion</a>
+		</div>
+
+	<!-- FIN MENU BURGER -->
+
+	
+
+{% endblock %}
