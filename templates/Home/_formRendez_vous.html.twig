@@ -15,8 +15,7 @@
 
 
 
-		{{ form_label(patient_form.specialiste)}}
-		{{form_widget(patient_form.specialiste)}}
+		
 
 
 
@@ -27,7 +26,7 @@
 		
 
 	
-
+		{{ form_errors(patient_form) }}
 		{{ form_widget(patient_form.Nom, {'attr': {'placeholder': 'votre Nom', 'class': 'formpage'}})  }}
 
 

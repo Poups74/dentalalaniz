@@ -106,7 +106,6 @@ class HomeController extends AbstractController
         
         if ($form->isSubmitted() && $form->isValid()) {
             $patient = $form->getData();
-            $specialiste = $form->get('specialiste')->getData();
 
             $motif = $form->get('MotifConsultation')->getData();
             $message = $form->get('message')->getData();
@@ -124,7 +123,6 @@ class HomeController extends AbstractController
                     'patient'=>$patient,
                     'motif'=> $motif,
                     'message'=>$message,
-                    'specialiste'=>$specialiste
                     ])
                 
             ;
