@@ -41,6 +41,8 @@ class SecurityController extends AbstractController
 
     /**
      * @Route("/ajout", name="ajout_admin")
+     * @IsGranted("ROLE_ADMIN")
+     *
      */
     public function insert_admin(UserRepository $user, Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder) 
     {
