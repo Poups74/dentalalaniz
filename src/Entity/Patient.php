@@ -28,7 +28,7 @@ class Patient
     private $Prenom;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string")
      */
     private $Telephone;
 
@@ -42,16 +42,7 @@ class Patient
      */
     private $civilite;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $MotifConsultation;
-
-    /**
-     * @ORM\Column(type="text")
-     */
-    private $message;
-
+    
     public function getId(): ?int
     {
         return $this->id;
@@ -81,12 +72,12 @@ class Patient
         return $this;
     }
 
-    public function getTelephone(): ?int
+    public function getTelephone(): ?string
     {
         return $this->Telephone;
     }
 
-    public function setTelephone(int $Telephone): self
+    public function setTelephone(string $Telephone): self
     {
         $this->Telephone = $Telephone;
 
@@ -117,27 +108,4 @@ class Patient
         return $this;
     }
 
-    public function getMotifConsultation(): ?string
-    {
-        return $this->MotifConsultation;
     }
-
-    public function setMotifConsultation(string $MotifConsultation): self
-    {
-        $this->MotifConsultation = $MotifConsultation;
-
-        return $this;
-    }
-
-    public function getMessage(): ?string
-    {
-        return $this->message;
-    }
-
-    public function setMessage(string $message): self
-    {
-        $this->message = $message;
-
-        return $this;
-    }
-}
