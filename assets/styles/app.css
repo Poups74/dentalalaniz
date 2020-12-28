@@ -1386,6 +1386,14 @@ nav {
 	margin-left: 10px;
 }
 
+/* --------------Connexion admin-------------- */
+
+.ConnexionForm {
+	margin: 90px 20%;
+}
+ .info_message {
+	 width: 70%;
+ }
 }
 
 /*-----------------------------------------------------------SMARTPHONE-----------------------------------------------------------*/
@@ -1562,5 +1570,22 @@ nav {
 	display: block;
 	margin: 5px auto 50px auto;
 }
+
+/* --------------Connexion admin-------------- */
+
+.ConnexionForm {
+	margin: 90px 5%;
+}
+
+.info_message {
+	width: 70%;
+	text-align: center;
+}
+
+#coordHeader {
+	display: none;
+}
+
+
 
 }
