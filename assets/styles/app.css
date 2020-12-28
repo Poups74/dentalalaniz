@@ -368,6 +368,10 @@ nav {
     padding: 10px;
 }
 
+.SelectMedecin {
+	display: none;
+}
+
 
 /* ------------------------------PAGE PRESENTATION CLINIQUE------------------------------ */
 
