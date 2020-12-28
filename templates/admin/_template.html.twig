@@ -53,3 +53,31 @@
 	
 
 {% endblock %}
+
+{% block footer %}
+		<footer>
+			<div class="footerstyle">
+
+				<div class="reseaux">
+					<a href="https://www.google.com/maps?ll=19.725706,-99.467735&z=7&t=m&hl=fr&gl=FR&mapclient=embed&cid=12844062673092341145" title="Localisez-nous" target="_blank">
+						<i class="fas fa-map-marker-alt"></i>
+					</a>
+					
+					<a href="https://fr-fr.facebook.com/public/Clinica-Dental-Alaniz" title="Suivez-nous" target="_blank">
+						<i class="fab fa-facebook-square"></i>
+					</a>
+
+					<a href="https//wwww.instagram.com" title="Suivez-nous" target="_blank">
+						<i class="fab fa-instagram"></i>
+					</a>
+				</div>	
+				<div id="hautdepage">
+					<i class="fas fa-sort-up"></i>
+				</div>
+			</div>
+			<div class="mentions">
+				<a href="https://www.google.com/maps?ll=19.725706,-99.467735&z=7&t=m&hl=fr&gl=FR&mapclient=embed&cid=12844062673092341145" target="_blank">Villa del Carbon, 54300 Villa del Carbón, Méx.</a><br>
+				<a href="mentionslegales.html">Mentions legales</a><a href="{{ path('app_login') }}">Gestion administrateur</a>
+			</div>
+		</footer>
+{% endblock %}
