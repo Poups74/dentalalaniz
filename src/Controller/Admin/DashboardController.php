@@ -44,7 +44,7 @@ class DashboardController extends AbstractController
     public function patientAdd(Request $request, EntityManagerInterface $manager)
     {
         // 1. Créer le formulaire
-        $form = $this->createForm(PatientFormType::class);
+        $form = $this->createForm(PatientFormType::class, null, ['medecin'=> false,'saisiePatient'=> false] );
         // 2. Passage de la requête au formulaire (récupération des données POST, validation)
         $form->handleRequest($request);
 
@@ -63,7 +63,7 @@ class DashboardController extends AbstractController
         }
 
         // On envoit une "vue de formulaire" au template
-        return $this->render('admin/dashboard/patient_add.html.twig', [
+        return $this->render('admin/dashboard/patient_add.html.twig',  [
             'patient_form' => $form->createView()
         ]);
     }
@@ -76,7 +76,8 @@ class DashboardController extends AbstractController
     {
         // On passe l'entité à modifier au formulaire
         // Il sera pré-rempli, et l'entité sera automatiquement modifiée
-        $form = $this->createForm(PatientFormType::class, $patient);
+        $form = $this->createForm(PatientFormType::class, $patient,[
+            'medecin'=>false, 'saisiePatient'=> false ]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

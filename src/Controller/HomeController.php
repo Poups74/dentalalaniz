@@ -21,7 +21,7 @@ class HomeController extends AbstractController
      */
     public function index(SessionInterface $session, Request $request, EntityManagerInterface $manager, MailerInterface $mailer): Response
     {
-        $formHome = $this->createForm(PatientFormType::class);
+        $formHome = $this->createForm(PatientFormType::class,null,['medecin' => false]);
         $formHome->handleRequest($request);
 
         if ($formHome->isSubmitted() && $formHome->isValid()) {
@@ -38,9 +38,9 @@ class HomeController extends AbstractController
                 // On attribue le destinataire
                 ->to('tooky972mada@gmail.com')
                 ->htmlTemplate('emails/contact.html.twig')
+                ->subject($motif)
                 ->context([
                     'patient'=>$patientHome,
-                    'motif'=> $motif,
                     'message'=>$message
                     ])
                 
@@ -122,11 +122,11 @@ class HomeController extends AbstractController
                 // On attribue le destinataire
                 ->to('levejeanchristian@gmail.com')
                 ->htmlTemplate('emails/contact.html.twig')
+                ->subject($motif)
                 ->context([
                     'medecin'=>$medecin,
                     'patient'=>$patient,
-                    'motif'=> $motif,
-                    'message'=>$messagePatient,
+                    'message'=>$messagePatient
                     ])
                 
             ;

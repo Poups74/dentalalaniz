@@ -2,8 +2,10 @@
 
 namespace App\Form;
 
+use App\Entity\MembreEquipe;
 use App\Entity\Patient;
 use App\Repository\MembreEquipeRepository;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -18,43 +20,47 @@ use Symfony\Component\Validator\Constraints\NotBlank;
 
 class PatientFormType extends AbstractType
 {
-    private $medecin ;
-
-
-    public function __construct( MembreEquipeRepository  $medecin)
-    {
-       $this->medecin=$medecin ;
-       
-    }
 
 
     public function buildForm(FormBuilderInterface $builder, array $options )
     {
+            
+        
+        if($options['medecin']===true) {
 
-        $liste= $this->medecin->findAll();
-        $array = [];
-        foreach ($liste as $category) {
-            if (!empty($category->getNom())) {
-              
-                $array[$category->getTitre().' '.$category->getPrenom().' '.$category->getNom()] = $category->getTitre().' '.$category->getPrenom() 
-                .' '.$category->getNom() ;
-                
-                // dd($array);
-                
-                // dd($array);
-           
-               
-            }
+            $builder->add('SelectMedecin', EntityType::class, array(
+                'class' => MembreEquipe::class,
+                'mapped'=> false,
+                'choice_label'=> function(MembreEquipe $membreEquipe) {
+
+                    return $membreEquipe->getTitre().' '.$membreEquipe->getPrenom().' '.$membreEquipe->getNom();
+
+                    }
+                )
+            );
+
+
+
         }
 
-        $builder->add('SelectMedecin', ChoiceType::class, array(
-                            'choices' => $array,
-                            'data_class' => null,
-                            'mapped'=> false))
 
+        if($options['saisiePatient']===true) {
 
+            $builder->add('MotifConsultation',TextType::class,[
+                'mapped'=>false,
+                'data_class' => null
+            ] )
+            ->add('message', TextareaType::class,[
+                'mapped'=>false,
+                'data_class' => null
+            ])
+            
+            ;
 
-            ->add('nom',TextType::class, [
+        }
+       
+
+        $builder->add('nom',TextType::class, [
                 'constraints' => [
                     new NotBlank(['message' => 'Le nom est manquant.']),
                     new Length([
@@ -83,21 +89,15 @@ class PatientFormType extends AbstractType
                 ],
                 'expanded'=>true
             ])
-            ->add('MotifConsultation',TextType::class,[
-                'mapped'=>false,
-                'data_class' => null
-            ] )
-            ->add('message', TextareaType::class,[
-                'mapped'=>false,
-                'data_class' => null
-            ])
-            
+           
             ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
+            'medecin'=> true,
+            'saisiePatient'=> true,
             'data_class' => Patient::class,
         ]);
     }
