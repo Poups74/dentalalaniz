@@ -919,7 +919,7 @@ section{
 	font-size: 45px;
 	color: #20616e;
 	width: 80%;
-	margin: 0 auto;
+	margin: 0 auto 50px auto;
 }
 .rdvForm {
 	width: 70%;
@@ -1092,7 +1092,7 @@ section{
 .info_message {
 	width: 40%;
 	margin: 0 auto;
-	margin-bottom: -70px;
+	margin-bottom: -30px;
 
 	line-height: 40px;
 	border-radius: 5px;
@@ -1105,7 +1105,7 @@ section{
 .error_message{
 	width: 40%;
 	margin: 0 auto;
-	margin-bottom: -70px;
+	margin-bottom: -30px;
 	line-height: 40px;
 	border-radius: 5px;
 	border: 1px solid rgb(230, 114, 114);
