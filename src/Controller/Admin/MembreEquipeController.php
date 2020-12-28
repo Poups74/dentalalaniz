@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Controller\Admin;
-use App\Entity\Image;
+
 use App\Entity\MembreEquipe;
 use App\Form\MembreEquipeFormType;
 use App\Repository\MembreEquipeRepository;
@@ -11,6 +11,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Form\ConfirmationFormType;
+use App\Service\UploaderService;
+use Symfony\Component\HttpFoundation\File\File;
 
 /**
      * ici le nom peut être n'importe lequel (/admin/membres-equipe)!!!!!
@@ -18,7 +20,10 @@ use App\Form\ConfirmationFormType;
      */
 
 class MembreEquipeController extends AbstractController
-{ /**
+{ 
+    
+
+    /**
     * @Route("/poup", name="")
     */
     public function index(): Response
@@ -49,8 +54,11 @@ class MembreEquipeController extends AbstractController
      * Ajouter un membre dans l'équipe
      * @Route("/add", name="add")
      */
-    public function membreEquipeAdd(Request $request, EntityManagerInterface $manager)
+    public function membreEquipeAdd(Request $request, EntityManagerInterface $manager, UploaderService $uploaderService)
     {
+
+ 
+
         // 1. Créer le formulaire
         $form = $this->createForm(MembreEquipeFormType::class);
         // 2. Passage de la requête au formulaire (récupération des données POST, validation)
@@ -59,36 +67,14 @@ class MembreEquipeController extends AbstractController
         // 3. Vérifier si le formulaire a été envoyé et est valide
         if ($form->isSubmitted() && $form->isValid()) {
 
-
-           $path =$this->getParameter('kernel.project_dir').'/public/build/images/ImagesSymfony';
-            // 4. Récupérer les données de formulaire
-            // Récupère les valeurs soumises sous frome d'objet MembreEquipe
-            /**
-             * 
-             * voir daans MembreEquipeForm
-             * $resolver->setDefaults([
-             *'data_class' => MembreEquipe::class,
-             * 
-             * 
-             */
             $membreEquipe = $form->getData();
-
-            // Ici je récupère l'image
-            $image= $membreEquipe->getImage();
-
-            // Je récupère le fichiers soumis
-            $file=$image->getFile();
+            $brochureFile = $form->get('image')->getData();
+            $fileName = $uploaderService->saveMembreEquipePhoto($brochureFile);
+            // dd( $fileName);
             
-            // Je crée un nom unique
-            $name = md5(uniqid()). '.'.
-            $file->guessExtension();
+            $membreEquipe->setImage($fileName);
 
-
-            // Je déplace le fichier
-            $file->move( $path, $name);
-            // dd($path);
-            $image->setName($name);
-            // Enregistrement en base de données
+           
             $manager->persist($membreEquipe);
             $manager->flush();
 
@@ -96,6 +82,7 @@ class MembreEquipeController extends AbstractController
             $this->addFlash('success', 'Le nouveau membre a été enregistré.');
             
             // dd($file);
+
 
 
 
@@ -118,6 +105,13 @@ class MembreEquipeController extends AbstractController
     {
         // On passe l'entité à modifier au formulaire
         // Il sera pré-rempli, et l'entité sera automatiquement modifiée
+
+
+        $membreEquipe->setImage(
+            new File($this->getParameter('kernel.project_dir').'/public/images/'.$membreEquipe->getImage())
+        );
+
+
         $form = $this->createForm(MembreEquipeFormType::class, $membreEquipe);
         $form->handleRequest($request);
 

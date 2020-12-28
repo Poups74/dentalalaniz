@@ -8,18 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class RecordController extends AbstractController
 {
-    /**
-     * Liste des patients
-     * @Route("/patient_list", name="patient_list")
-     */
-    public function patientList(): Response
-    {
-        return $this->render(
-            'record/patient_list.html.twig',[
-                'variable_test'=> 'Liste des patients'
-            ]
-        );
-}
+
 /**
      * Page d'un patient
      * @Route("/patient/{id<\d+>}", name="patient_page")

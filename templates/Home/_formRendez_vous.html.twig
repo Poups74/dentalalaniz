@@ -2,6 +2,7 @@
 {{ form_start(patient_form, {'attr': {'class': 'rdvForm'}}) }}
 
 	
+<<<<<<< HEAD
 	{# <label>Spécialiste concerné</label><br>
 	<SELECT name="nom" size="1">
 		<OPTION>Dr Alaniz Garcia - Odontologie intégrale
@@ -18,22 +19,30 @@
 		
 
 
+=======
+	<label>Spécialiste concerné</label><br>
+{{ form_widget(patient_form.SelectMedecin, {'attr': {'placeholder': 'Choisissez votre Medecin', 'class': 'formpage'}})  }}
+>>>>>>> 8d71590c24bbf07f302e704f6051131e4b6b4fa4
 
 	<div class="civilitepage">
 		{{ form_row(patient_form.civilite)}}
 	</div><br>
 
-		
 
 	
+<<<<<<< HEAD
 		{{ form_errors(patient_form) }}
 		{{ form_widget(patient_form.Nom, {'attr': {'placeholder': 'votre Nom', 'class': 'formpage'}})  }}
+=======
+
+		{{ form_widget(patient_form.nom, {'attr': {'placeholder': 'votre Nom', 'class': 'formpage'}})  }}
+>>>>>>> 8d71590c24bbf07f302e704f6051131e4b6b4fa4
 
 
-		{{ form_widget(patient_form.Prenom, {'attr': {'placeholder': 'votre Prenom', 'class': 'formpage'}})  }}
+		{{ form_widget(patient_form.prenom, {'attr': {'placeholder': 'votre Prenom', 'class': 'formpage'}})  }}
 
-		{{ form_widget(patient_form.Telephone, {'attr': {'placeholder': 'votre Telephone', 'class': 'formpage'}})  }}
-		{{ form_widget(patient_form.Email, {'attr': {'placeholder': 'votre Email', 'class': 'formpage'}})  }}
+		{{ form_widget(patient_form.telephone, {'attr': {'placeholder': 'votre Telephone', 'class': 'formpage'}})  }}
+		{{ form_widget(patient_form.email, {'attr': {'placeholder': 'votre Email', 'class': 'formpage'}})  }}
 		 
 
 	

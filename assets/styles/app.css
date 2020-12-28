@@ -12,6 +12,7 @@ body {
 	overflow-x: hidden;
 }
 
+
 /*-----------MENU BURGER-----------*/
 
 .toggle_btn {
@@ -113,6 +114,8 @@ body {
         text-align: center;
         margin-top: 50px;
 }
+  
+
 
 
 /* ------------------------------HEADER------------------------------ */
@@ -334,6 +337,21 @@ nav {
     font-family: "roboto", open sans;
     font-size: 15px;
 }
+<<<<<<< HEAD
+=======
+
+.contact .msg{
+	border-radius: 10px;
+    height: 60px;
+    border: none;
+    width: 80%;
+    margin: 10px;
+    text-align: center;
+    font-family: "roboto", open sans;
+    font-size: 15px;
+}
+>>>>>>> 8d71590c24bbf07f302e704f6051131e4b6b4fa4
+
 
 .contact #envoyer {
     margin: auto;
@@ -366,6 +384,10 @@ nav {
 #coordonnees {
     text-align: center;
     padding: 10px;
+}
+
+.SelectMedecin {
+	display: none;
 }
 
 
@@ -403,6 +425,8 @@ nav {
 	margin-top: 50px;
 }
 
+
+
 h1 {
 	text-align: center;
 	font-family: "roboto";
@@ -412,6 +436,8 @@ h1 {
 	text-transform: uppercase;
 	color: #20616e;
 }
+
+
 
 /* ---------Cartes Rotatives--------- */
 
@@ -1580,6 +1606,17 @@ nav {
 .info_message {
 	width: 70%;
 	text-align: center;
+<<<<<<< HEAD
+}
+
+#coordHeader {
+	display: none;
+}
+
+
+
+=======
+>>>>>>> 8d71590c24bbf07f302e704f6051131e4b6b4fa4
 }
 
 #coordHeader {
@@ -1589,3 +1626,4 @@ nav {
 
 
 }
+

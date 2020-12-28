@@ -1,0 +1,60 @@
+{% extends "admin/_template.html.twig" %}
+
+{% block title %}
+    Patients
+{% endblock %}
+
+{% block content %}
+
+    <div class="section">
+        <h1 class="title">Patients : {{ patient_list|length }}</h1>
+    </div>
+
+    <div class="section">
+
+         <a href="{{ path('patient_add') }}">
+            <h2 class="title">Ajouter un nouveau patient</h2>
+        </a>
+    </div>
+     
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Civilité</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Téléphone</th>
+                    <th>Email</th>          
+                </tr>
+            </thead>
+        
+            <tbody>
+                {% for patient in patient_list %}
+                    <tr>
+                        <td>{{ patient.id }}</td>
+                        <td>{{ patient.civilite }}</td>
+                        <td>{{ patient.nom }}</td>
+                        <td>{{ patient.prenom }}</td>
+                        <td>{{ patient.telephone }}</td>
+                        <td>{{ patient.email }}</td>
+                        <td>
+                            <a href="{{ path('patient_edit', {id: patient.id}) }}" class="button is-small is-success">
+                                <i class="far fa-edit"></i>
+                            </a>
+                            <a href="{{ path('patient_delete', {id: patient.id}) }}" class="button is-small is-danger">
+                                <i class="far fa-trash-alt"></i>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>  
+        </table>
+
+{% endblock %}
+
+
+
+
+
+

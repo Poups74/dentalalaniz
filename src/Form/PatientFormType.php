@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Patient;
+use App\Repository\MembreEquipeRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -17,10 +18,43 @@ use Symfony\Component\Validator\Constraints\NotBlank;
 
 class PatientFormType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    private $medecin ;
+
+
+    public function __construct( MembreEquipeRepository  $medecin)
     {
-        $builder
-            ->add('Nom',TextType::class, [
+       $this->medecin=$medecin ;
+       
+    }
+
+
+    public function buildForm(FormBuilderInterface $builder, array $options )
+    {
+
+        $liste= $this->medecin->findAll();
+        $array = [];
+        foreach ($liste as $category) {
+            if (!empty($category->getNom())) {
+              
+                $array[$category->getTitre().' '.$category->getPrenom().' '.$category->getNom()] = $category->getTitre().' '.$category->getPrenom() 
+                .' '.$category->getNom() ;
+                
+                // dd($array);
+                
+                // dd($array);
+           
+               
+            }
+        }
+
+        $builder->add('SelectMedecin', ChoiceType::class, array(
+                            'choices' => $array,
+                            'data_class' => null,
+                            'mapped'=> false))
+
+
+
+            ->add('nom',TextType::class, [
                 'constraints' => [
                     new NotBlank(['message' => 'Le nom est manquant.']),
                     new Length([
@@ -30,7 +64,7 @@ class PatientFormType extends AbstractType
                     ])
                 ]
             ])
-            ->add('Prenom',TextType::class, [
+            ->add('prenom',TextType::class, [
                 'constraints' => [
                     new NotBlank(['message' => 'Le prénom est manquant.']),
                     new Length([
@@ -40,8 +74,8 @@ class PatientFormType extends AbstractType
                     ])
                 ]
             ])
-            ->add('Telephone',TelType::class)
-            ->add('Email', EmailType::class)
+            ->add('telephone',TelType::class)
+            ->add('email', EmailType::class)
             ->add('civilite', ChoiceType::class,[
                 'choices'=>[
                     'femme'=>'f',
@@ -50,10 +84,12 @@ class PatientFormType extends AbstractType
                 'expanded'=>true
             ])
             ->add('MotifConsultation',TextType::class,[
-                'mapped'=>false
+                'mapped'=>false,
+                'data_class' => null
             ] )
             ->add('message', TextareaType::class,[
-                'mapped'=>false
+                'mapped'=>false,
+                'data_class' => null
             ])
             
             ;

@@ -17,10 +17,7 @@ class MembreEquipe
      */
     private $id;
 
-/**
-     *@ORM\OneToOne(targetEntity="Image",cascade={"persist","remove"})
-     */
-    private $image;
+
 
     /**
      * @ORM\Column(type="string", length=10)
@@ -66,6 +63,11 @@ class MembreEquipe
      * @ORM\Column(type="string", length=20)
      */
     private $titre;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $image;
 
     public function getId(): ?int
     {
@@ -168,25 +170,6 @@ class MembreEquipe
         return $this;
     }
 
-    /**
-     * Get the value of image
-     */ 
-    public function getImage(): ?Image
-    {
-        return $this->image;
-    }
-
-    /**
-     * Set the value of image
-     *
-     * @return  self
-     */ 
-    public function setImage($image)
-    {
-        $this->image = $image;
-
-        return $this;
-    }
 
     public function getTitre(): ?string
     {
@@ -196,6 +179,18 @@ class MembreEquipe
     public function setTitre(string $titre): self
     {
         $this->titre = $titre;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(?string $image): self
+    {
+        $this->image = $image;
 
         return $this;
     }
