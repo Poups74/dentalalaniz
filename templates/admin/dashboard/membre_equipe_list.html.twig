@@ -10,70 +10,61 @@
 
     <div class="section">
         <h1 class="title">Membres de l'équipe: {{ membre_equipe_list|length }}</h1>
-
-        {% for membre_equipe in membre_equipe_list %}
-<!-- -----------------------------LISTE DE L'EQUIPE---------------------- -->
-				<!-- qui englobe tous les elements d'un personnel -->
-				<section>
-
-				<!-- correspond au Flexbox gauche -->
-					<div class="container" id="{{membre_equipe.id}}">
-						<div class ="photoProfil">
-							<div class="photoDoc">
-								</div>
-									<img src={{ asset('/images/')~ membre_equipe.image }} alt="photo de" {{membre_equipe.titre}}" "{{membre_equipe.prenom}}" "{{membre_equipe.nom}}>
-									<h2> {{membre_equipe.titre}}  {{membre_equipe.prenom}}  {{membre_equipe.nom}} </h2>
-									<h4>{{membre_equipe.specialite}}</h4>
-								<div class="plusdInfos">
-									<p>+ d'informations</p>
-								</div>
-								<div class="infosResp">
-									<h3>Métier :</h3>
-									<p>{{ membre_equipe.descriptionmetier }}</p>
-									<h3>Expérience</h3>
-									<p>{{ membre_equipe.experience }}</p>
-									<h3>Formation</h3>
-									<p>{{ membre_equipe.formation }}</p>
-									
-								</div>
-							</div>
-						</div>
-
-				<!-- correspond au Flexbox droit -->	
-							
-						<div class="metier">
-							<ul>
-								<li><h3>Métier :</h3>
-									<p>{{ membre_equipe.descriptionmetier }}
-									</p>
-								</li>
-								<li><h3>Expérience</h3>
-									<p>{{ membre_equipe.experience }}</p>
-								</li>
-								<li><h3>Formation</h3>
-									<p>{{ membre_equipe.formation }}</p>
-								</li>
-							</ul>
-						</div>
-
-                        <div class="metier">
-                        <a href="{{ path('admin_membre_equipe_edit', {id: membre_equipe.id}) }}" class="button is-small is-success">
-                            <i class="fas fa-edit"> Modifier</i>
-                        </a>
-
-                        
-                        <a href="{{ path('admin_membre_equipe_delete', {id: membre_equipe.id}) }}" class="button is-small is-danger">
-                            <i class="fas fa-trash-alt">Supprimer</i>
-                        </a>
-                   </div>
-					</div>
+    </div>
 
 
-                   
-				</section>
-				{% endfor %}
+    <div class="section">
 
+         <a href="{{ path('admin_membre_equipe_add') }}">
+            <h2 class="title">Ajouter un membre de l'équipe</h2>
+        </a>
+    </div>
+
+
+    <table class="content-table">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Image</th>
+                    <th>Civilité</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Titre</th>
+                    <th>Métier</th>
+                    <th>Spécialité</th>  
+                    <th>Description metier</th>  
+                    <th>Experience</th>
+                    <th>Formation</th>
+                    <th>Modif. / Suppr.</th>       
+                </tr>
+            </thead>
+
+
+            <tbody>
+                {% for membre_equipe in membre_equipe_list %}
+                    <tr>
+                        <td>{{ membre_equipe.id }}</td>
+                        <td> <img src="{{ asset('/images/')~ membre_equipe.image }}" alt=""></td>
+                        <td>{{ membre_equipe.civilite }}</td>
+                        <td>{{ membre_equipe.nom }}</td>
+                        <td>{{ membre_equipe.prenom }}</td>
+                        <td>{{ membre_equipe.titre }}</td>
+                        <td>{{ membre_equipe.metier }}</td>
+                        <td>{{ membre_equipe.specialite }}</td>
+                        <td>{{ membre_equipe.descriptionmetier }}</td>
+                        <td>{{ membre_equipe.experience }}</td>
+                        <td>{{ membre_equipe.formation }}</td>
+                        <td>
+                            <a href="{{ path('admin_membre_equipe_edit', {id: membre_equipe.id}) }}" class="button is-small is-success">
+                                <i class="far fa-edit"></i>
+                            </a>
+                            <a href="{{ path('admin_membre_equipe_delete', {id: membre_equipe.id}) }}" class="button is-small is-danger">
+                                <i class="far fa-trash-alt"></i>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>  
+        </table>
 
 {% endblock %}
-
-
