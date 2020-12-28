@@ -42,12 +42,25 @@ class PatientFormType extends AbstractType
 
 
         }
-       
-      
-       
 
 
-        $builder->add('Nom',TextType::class, [
+        if($options['saisiePatient']===true) {
+
+            $builder->add('MotifConsultation',TextType::class,[
+                'mapped'=>false,
+                'data_class' => null
+            ] )
+            ->add('message', TextareaType::class,[
+                'mapped'=>false,
+                'data_class' => null
+            ])
+            
+            ;
+
+        }
+       
+
+        $builder->add('nom',TextType::class, [
                 'constraints' => [
                     new NotBlank(['message' => 'Le nom est manquant.']),
                     new Length([
@@ -76,15 +89,7 @@ class PatientFormType extends AbstractType
                 ],
                 'expanded'=>true
             ])
-            ->add('MotifConsultation',TextType::class,[
-                'mapped'=>false,
-                'data_class' => null
-            ] )
-            ->add('message', TextareaType::class,[
-                'mapped'=>false,
-                'data_class' => null
-            ])
-            
+           
             ;
     }
 
@@ -92,6 +97,7 @@ class PatientFormType extends AbstractType
     {
         $resolver->setDefaults([
             'medecin'=> true,
+            'saisiePatient'=> true,
             'data_class' => Patient::class,
         ]);
     }
