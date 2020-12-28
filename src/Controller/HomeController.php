@@ -32,7 +32,7 @@ class HomeController extends AbstractController
             
 
 
-            $message = (new TemplatedEmail())
+            $email = (new TemplatedEmail())
                 // On attribue l'expéditeur
                 ->from('noreply@jacquot-sebastien.fr')
                 // On attribue le destinataire
@@ -45,7 +45,7 @@ class HomeController extends AbstractController
                     ])
                 
             ;
-            $mailer->send($message);
+            $mailer->send($email);
 
 
             $manager->persist($patientHome);
@@ -130,6 +130,7 @@ class HomeController extends AbstractController
                     ])
                 
             ;
+            // dd($message);
             $mailer->send($email);
 
 

@@ -337,8 +337,6 @@ nav {
     font-family: "roboto", open sans;
     font-size: 15px;
 }
-<<<<<<< HEAD
-=======
 
 .contact .msg{
 	border-radius: 10px;
@@ -350,8 +348,18 @@ nav {
     font-family: "roboto", open sans;
     font-size: 15px;
 }
->>>>>>> a3247553f74ff67a5512378c751cfe873422f173
 
+
+.contact .msg{
+	border-radius: 10px;
+    height: 60px;
+    border: none;
+    width: 80%;
+    margin: 10px;
+    text-align: center;
+    font-family: "roboto", open sans;
+    font-size: 15px;
+}
 
 .contact #envoyer {
     margin: auto;
@@ -1667,17 +1675,6 @@ nav {
 .info_message {
 	width: 70%;
 	text-align: center;
-<<<<<<< HEAD
-}
-
-#coordHeader {
-	display: none;
-}
-
-
-
-=======
->>>>>>> a3247553f74ff67a5512378c751cfe873422f173
 }
 
 #coordHeader {
