@@ -8,16 +8,19 @@
     <div class="section">
         <h1 class="title">Suppression du patient {{ patient.nom }}</h1>
 
+        <div class="confirmation-delete">
         {{ form_start(confirmation_form) }}
 
             {{ form_row(confirmation_form.confirmation, {
                 label: 'Je confirme la suppression du patient' ~ patient.nom ~ 'et de ses coordonnées. '
             }) }}
+        
 
-            <button type="submit" class="button is-danger is-fullwidth">
+            <button type="submit" id="bouton-supprimer">
                 Supprimer
             </button>
 
         {{ form_end(confirmation_form) }}
+        </div>
     </div>
 {% endblock %}

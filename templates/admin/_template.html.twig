@@ -16,7 +16,7 @@
 				<p>Accueil admin</p>
 			</a>
 			
-			<a href="#" class="boutonmenu">
+			<a href="{{ path('admin_membre_equipe_list') }}" class="boutonmenu">
 				<p>Equipe</p>
 			</a>
 
@@ -41,7 +41,7 @@
 		<div class="menu nav">
 			<a href={{ path('Home') }}>Accueil</a>
 			<a href="{{ path('admin_') }}">Accueil admin</a>
-			<a href="#">Equipe</a>
+			<a href="{{ path('admin_membre_equipe_list') }}">Equipe</a>
 			<a href="{{path('patient_list')}}">Patients</a>
 			<a class="boutonmenu" href="{{ path('app_logout') }}">Déconnexion</a>
 		</div>

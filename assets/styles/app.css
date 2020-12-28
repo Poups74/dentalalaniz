@@ -900,7 +900,7 @@ section{
 }
 .rdvForm {
 	width: 70%;
-	margin: 100px auto 75px auto;
+	margin: 50px auto 75px auto;
 }
 
 .rdvForm select {
@@ -1150,7 +1150,42 @@ section{
     text-transform: uppercase;
     color: #20616e;
 }
-  
+
+/* --------------- CSS flash ------------------------*/
+
+.notification{
+    text-align: center;
+    color: #20616e;
+}
+
+/* -------------- CSS delete --------------------*/
+
+.confirmation-delete{
+	height: 100px;
+	text-align: center;
+	color: #20616e;
+}
+
+#bouton-supprimer {
+	margin: 20px auto 0 auto;
+	width: 100px;
+	height: 30px;;
+	border: none;
+    color: #ffffff;
+    font-size: 13px;
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: "roboto", open sans;
+    letter-spacing: 0.3em;
+    background: linear-gradient(#396169 0%, #0c4d59 36.82%, #19778a 97.07%, #0d3c45 100%);
+    box-shadow: 0px 3px 6px #000;
+}
+
+#bouton-supprimer:hover {
+	background: linear-gradient(#3fc2dc 0%, #20616e 100%);
+    box-shadow: 0px 3px 6px #396169;
+}
 
 
 /* ------------------------------FOOTER------------------------------ */

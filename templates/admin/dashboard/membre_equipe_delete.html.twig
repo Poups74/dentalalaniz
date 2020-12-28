@@ -12,10 +12,11 @@ Membre - {{membre_equipe.nom}}
 <div class="section">
     <h1 class="title">Suppression du membre {{membre_equipe.nom}}</h1>
 
+        <div class="confirmation-delete">
 
         {{form_start(confirmation_form)}}
 
-
+        
         {{form_row(confirmation_form.confirmation,
         {
 
@@ -23,9 +24,13 @@ Membre - {{membre_equipe.nom}}
 
         })}}
 
-        <button type="submit" class="button is-danger is-fullwidth">Supprimer</button>
+        
+
+        <button type="submit" id="bouton-supprimer">Supprimer</button>
 
         {{form_end(confirmation_form)}}
+
+        </div>
 
 
 </div>

@@ -17,7 +17,7 @@
     {# si l'utilisateur est déjà connecté #}
     {% if app.user %}
         <div class="info_message">
-                    Vous êtes connecté en tant que {{ app.user.username }}. <a href="{{ path('admin_dashboard') }}">Espace admin</a> / <a href="{{ path('app_logout') }}">Déconnexion</a>
+                    Vous êtes connecté en tant que {{ app.user.username }}, <a href="{{ path('app_logout') }}">Déconnexion</a>
         </div>
     {% endif %}
 
