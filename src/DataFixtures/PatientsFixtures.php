@@ -15,10 +15,11 @@ class PatientsFixtures extends Fixture
         {       
 
             $patients =(new Patient())
-
+            ->setCivilite('f')
             ->setNom('NomPatient' . $i)
             ->setPrenom('est' . $i)
             ->setEmail('Mail'. $i . '@gmail.com')
+            ->setTelephone('01234')
             ;
                 
             $manager->persist($patients);
@@ -29,3 +30,4 @@ class PatientsFixtures extends Fixture
     }
 
 }
+

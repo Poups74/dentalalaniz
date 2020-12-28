@@ -1,21 +1,12 @@
 {{ form_start(patient_form, {'attr': {'class': 'rdvForm'}}) }}
 	
 	<label>Spécialiste concerné</label><br>
-	<SELECT name="nom" size="1">
-		<OPTION>Dr Alaniz Garcia - Odontologie intégrale
-		<OPTION>Dr Alaniz Garcia - Odontologie générale
-		<OPTION>Dra Alaniz Barrera - Endodontie
-		<OPTION>Dra Alaniz Paredes - Orthodontie, Orthopédie 
-		<OPTION>Dra Alaniz Paredes - Periodontie, Implantologie
-		<OPTION>Dra Alaniz Paredes - Odonthopedriatrie, Orthopedie
-		<option>Sra Barrera Velasquez - Secrétaire médicale
-	</SELECT><br>
+{{ form_widget(patient_form.SelectMedecin, {'attr': {'placeholder': 'Choisissez votre Medecin', 'class': 'formpage'}})  }}
 
 	<div class="civilitepage">
 		{{ form_row(patient_form.civilite)}}
 	</div><br>
 
-		
 
 	
 

@@ -55,7 +55,7 @@ class Patient
 
     public function setNom(string $nom): self
     {
-        $this->Nom = $nom;
+        $this->nom = $nom;
 
         return $this;
     }

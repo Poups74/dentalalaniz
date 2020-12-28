@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Patient;
+use App\Repository\MembreEquipeRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -17,9 +18,41 @@ use Symfony\Component\Validator\Constraints\NotBlank;
 
 class PatientFormType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    private $medecin ;
+
+
+    public function __construct( MembreEquipeRepository  $medecin)
     {
-        $builder
+       $this->medecin=$medecin ;
+       
+    }
+
+
+    public function buildForm(FormBuilderInterface $builder, array $options )
+    {
+
+        $liste= $this->medecin->findAll();
+        $array = [];
+        foreach ($liste as $category) {
+            if (!empty($category->getNom())) {
+              
+                $array[$category->getTitre().' '.$category->getPrenom().' '.$category->getNom()] = $category->getTitre().' '.$category->getPrenom() 
+                .' '.$category->getNom() ;
+                
+                // dd($array);
+                
+                // dd($array);
+           
+               
+            }
+        }
+
+        $builder->add('SelectMedecin', ChoiceType::class, array(
+                            'choices' => $array,
+                            'mapped'=> false))
+
+
+
             ->add('nom',TextType::class, [
                 'constraints' => [
                     new NotBlank(['message' => 'Le nom est manquant.']),
