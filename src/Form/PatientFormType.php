@@ -49,6 +49,7 @@ class PatientFormType extends AbstractType
 
         $builder->add('SelectMedecin', ChoiceType::class, array(
                             'choices' => $array,
+                            'data_class' => null,
                             'mapped'=> false))
 
 
@@ -83,10 +84,12 @@ class PatientFormType extends AbstractType
                 'expanded'=>true
             ])
             ->add('MotifConsultation',TextType::class,[
-                'mapped'=>false
+                'mapped'=>false,
+                'data_class' => null
             ] )
             ->add('message', TextareaType::class,[
-                'mapped'=>false
+                'mapped'=>false,
+                'data_class' => null
             ])
             ;
     }
