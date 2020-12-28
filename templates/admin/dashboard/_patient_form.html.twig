@@ -1,0 +1,19 @@
+{{ form_start(patient_form, {'attr': {'class': 'rdvForm'}}) }}
+
+    
+    {{ form_widget(patient_form.civilite, {'attr': {'placeholder': 'Civilité', 'class': 'formpage'}}) }}
+
+    {{ form_widget(patient_form.nom, {'attr': {'placeholder': 'Nom', 'class': 'formpage'}}) }}
+
+    {{ form_widget(patient_form.prenom, {'attr': {'placeholder': 'Prénom', 'class': 'formpage'}}) }}
+
+    {{ form_widget(patient_form.telephone, {'attr': {'placeholder': 'Téléphone', 'class': 'formpage'}}) }}
+
+    {{ form_widget(patient_form.email, {'attr': {'placeholder': 'Email', 'class': 'formpage'}}) }}
+
+    <button id="envoyerpage" type="submit">
+        Enregistrer
+    </button>
+
+    
+{{ form_end(patient_form) }}

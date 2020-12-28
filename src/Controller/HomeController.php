@@ -98,18 +98,21 @@ class HomeController extends AbstractController
     /**
      * @Route("/rendez_vous", name="Rendez_vous")
      */
-    public function rendezVous(Request $request, EntityManagerInterface $manager, MailerInterface $mailer): Response
+    public function rendezVous(Request $request, EntityManagerInterface $manager, MailerInterface $mailer ): Response
     {
 
         $form = $this->createForm(PatientFormType::class);
+        // dd($form);
         $form->handleRequest($request);
+       
         
         if ($form->isSubmitted() && $form->isValid()) {
             $patient = $form->getData();
 
             $motif = $form->get('MotifConsultation')->getData();
-            $message = $form->get('message')->getData();
-            // dd($patient);
+            $messagePatient =$form->get('message')->getData();
+            $medecin= $form->get('SelectMedecin')->getData();
+        //   dd($motif);
             
 
 
@@ -117,12 +120,13 @@ class HomeController extends AbstractController
                 // On attribue l'expéditeur
                 ->from('noreply@jacquot-sebastien.fr')
                 // On attribue le destinataire
-                ->to('tooky972mada@gmail.com')
+                ->to('levejeanchristian@gmail.com')
                 ->htmlTemplate('emails/contact.html.twig')
                 ->context([
+                    'medecin'=>$medecin,
                     'patient'=>$patient,
                     'motif'=> $motif,
-                    'message'=>$message,
+                    'message'=>$messagePatient,
                     ])
                 
             ;
@@ -151,6 +155,17 @@ class HomeController extends AbstractController
         ]);        
     }
 
+
+
+   /**
+*  @Route("/listeSelect", name="Select")     
+*/
+    public function listeSelect(MembreEquipeRepository $membreEquipeRepository): Response 
+    {             
+        return $this->render('Home/_listeSelect.html.twig', [            
+            'membre_equipe_Select' => $membreEquipeRepository->findAll()
+        ]);        
+    }
 
 
  

@@ -32,9 +32,16 @@ class MembreEquipeFormType extends AbstractType
                     ] )
             ->add('experience')
             ->add('formation')
-            ->add('image',ImageFormType::class,['label'=>false])
-        ;
+            ->add('image',FileType::class,array('data_class' => null,'required' => false,'label'=>'Inserez une photo'));
+               
     }
+
+  
+    
+
+
+
+
 
 
    
