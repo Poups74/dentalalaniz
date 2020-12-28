@@ -20,22 +20,22 @@ class Patient
     /**
      * @ORM\Column(type="string", length=35)
      */
-    private $Nom;
+    private $nom;
 
     /**
      * @ORM\Column(type="string", length=35)
      */
-    private $Prenom;
+    private $prenom;
 
     /**
      * @ORM\Column(type="string")
      */
-    private $Telephone;
+    private $telephone;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Email;
+    private $email;
 
     /**
      * @ORM\Column(type="string", length=25)
@@ -50,48 +50,48 @@ class Patient
 
     public function getNom(): ?string
     {
-        return $this->Nom;
+        return $this->nom;
     }
 
-    public function setNom(string $Nom): self
+    public function setNom(string $nom): self
     {
-        $this->Nom = $Nom;
+        $this->Nom = $nom;
 
         return $this;
     }
 
     public function getPrenom(): ?string
     {
-        return $this->Prenom;
+        return $this->prenom;
     }
 
-    public function setPrenom(string $Prenom): self
+    public function setPrenom(string $prenom): self
     {
-        $this->Prenom = $Prenom;
+        $this->prenom = $prenom;
 
         return $this;
     }
 
     public function getTelephone(): ?string
     {
-        return $this->Telephone;
+        return $this->telephone;
     }
 
-    public function setTelephone(string $Telephone): self
+    public function setTelephone(string $telephone): self
     {
-        $this->Telephone = $Telephone;
+        $this->telephone = $telephone;
 
         return $this;
     }
 
     public function getEmail(): ?string
     {
-        return $this->Email;
+        return $this->email;
     }
 
-    public function setEmail(string $Email): self
+    public function setEmail(string $email): self
     {
-        $this->Email = $Email;
+        $this->email = $email;
 
         return $this;
     }

@@ -154,26 +154,26 @@
 
 				{# <label for="name"></label> #}
 					{# <input class="form" type="text" placeholder="Votre Nom" id="name"> #}
-				{{ form_widget(patient.Nom, {'attr': {'placeholder': 'votre Nom', 'class': 'form'}})  }}
+				{{ form_widget(patient.nom, {'attr': {'placeholder': 'votre Nom', 'class': 'form'}})  }}
 
 					
 {# 
 				<label for="prenom"></label>
 					<input class="form" placeholder="Votre Prénom" type="text" id="prenom"> #}
-				{{ form_widget(patient.Prenom, {'attr': {'placeholder': 'votre prénom', 'class': 'form'}})  }}
+				{{ form_widget(patient.prenom, {'attr': {'placeholder': 'votre prénom', 'class': 'form'}})  }}
 
 
 					
 
 				{# <label></label>
 					<input class="form" placeholder="Votre Téléphone" type="tel" pattern="^[0-9]{10}$"> #}
-				{{ form_widget(patient.Telephone, {'attr': {'placeholder': 'votre téléphone', 'class': 'form'}})  }}
+				{{ form_widget(patient.telephone, {'attr': {'placeholder': 'votre téléphone', 'class': 'form'}})  }}
 
 					
 
 				{# <label for="email"></label>
 					<input class="form" placeholder="Votre Email" type="email" id="email"> #}
-				{{ form_widget(patient.Email, {'attr': {'placeholder': 'votre email', 'class': 'form'}})  }}
+				{{ form_widget(patient.email, {'attr': {'placeholder': 'votre email', 'class': 'form'}})  }}
 
 				<label for="motif"></label>
 					<input class="form" placeholder="Motif" type="text" id="motif">

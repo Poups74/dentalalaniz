@@ -20,7 +20,7 @@ class PatientFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('Nom',TextType::class, [
+            ->add('nom',TextType::class, [
                 'constraints' => [
                     new NotBlank(['message' => 'Le nom est manquant.']),
                     new Length([
@@ -30,7 +30,7 @@ class PatientFormType extends AbstractType
                     ])
                 ]
             ])
-            ->add('Prenom',TextType::class, [
+            ->add('prenom',TextType::class, [
                 'constraints' => [
                     new NotBlank(['message' => 'Le prénom est manquant.']),
                     new Length([
@@ -40,8 +40,8 @@ class PatientFormType extends AbstractType
                     ])
                 ]
             ])
-            ->add('Telephone',TelType::class)
-            ->add('Email', EmailType::class)
+            ->add('telephone',TelType::class)
+            ->add('email', EmailType::class)
             ->add('civilite', ChoiceType::class,[
                 'choices'=>[
                     'femme'=>'f',

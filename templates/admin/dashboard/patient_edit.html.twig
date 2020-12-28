@@ -1,0 +1,17 @@
+{% extends "admin/_template.html.twig" %}
+
+{% block title %}
+    Patient - {{patient.nom}}
+{% endblock %}
+
+{% block content %}
+    <div class="section">
+        <h1 class="title">
+            {{ patient.nom }}
+        </h1>
+
+        {% include "includes/flash.html.twig" %}
+
+        {% include "admin/dashboard/_patient_form.html.twig" %}
+    </div>
+{% endblock %}

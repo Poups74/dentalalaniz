@@ -12,6 +12,7 @@ body {
 	overflow-x: hidden;
 }
 
+
 /*-----------MENU BURGER-----------*/
 
 .toggle_btn {
@@ -113,6 +114,8 @@ body {
         text-align: center;
         margin-top: 50px;
 }
+  
+
 
 
 /* ------------------------------HEADER------------------------------ */
@@ -334,7 +337,7 @@ nav {
     font-family: "roboto", open sans;
     font-size: 15px;
 }
-.
+
 .contact .msg{
 	border-radius: 10px;
     height: 60px;
@@ -345,6 +348,7 @@ nav {
     font-family: "roboto", open sans;
     font-size: 15px;
 }
+
 
 .contact #envoyer {
     margin: auto;
@@ -414,6 +418,8 @@ nav {
 	margin-top: 50px;
 }
 
+
+
 h1 {
 	text-align: center;
 	font-family: "roboto";
@@ -423,6 +429,8 @@ h1 {
 	text-transform: uppercase;
 	color: #20616e;
 }
+
+
 
 /* ---------Cartes Rotatives--------- */
 
@@ -1575,3 +1583,4 @@ nav {
 }
 
 }
+
