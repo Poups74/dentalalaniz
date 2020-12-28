@@ -340,7 +340,8 @@ nav {
     margin: 10px;
     text-align: center;
     font-family: "roboto", open sans;
-    font-size: 15px;
+	font-size: 15px;
+	padding-top: 5px;
 }
 
 .contact .msg{
@@ -1123,7 +1124,7 @@ section{
 	right: 30px;
 	color: white;
 	font-size: 35px;
-	margin: 55px 0;
+	margin: -95px 0;
 }
 
 /* ADMIN tableau patient list */
