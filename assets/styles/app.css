@@ -1087,6 +1087,67 @@ section{
 	background-color: rgb(226, 159, 159);
 }
 
+/* ADMIN tableau patient list */
+
+.content-table {
+	border-collapse: collapse;
+	margin: 25px auto;
+	font-size: 0.9em;
+	min-width: 80%;
+	border-radius: 5px 5px 0 0;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .content-table thead tr {
+	background-color: #3fc2dc;
+	color: #ffffff;
+	text-align: left;
+	font-weight: bold;
+  }
+  
+  .content-table th,
+  .content-table td {
+    padding: 12px 15px;
+	color: #20616e;
+	text-align: center;
+  }
+  
+  .content-table tbody tr {
+	border-bottom: 1px solid #dddddd;
+  }
+  
+  .content-table tbody tr:nth-of-type(even) {
+	background-color: #f3f3f3;
+  }
+  
+  .content-table tbody tr:last-of-type {
+	border-bottom: 2px solid #3fc2dc;
+  }
+
+  .fa-edit:before {
+    content: "\f044";
+	color: #20616e;
+	margin: 0px 10px;
+}
+
+.fa-trash-alt:before {
+    content: "\f2ed";
+	color: #20616e;
+	margin: 0px 10px;
+}
+
+.section h1{
+    text-align: center;
+    font-family: "roboto";
+    font-weight: 300;
+    font-size: 35px;
+    margin: 50px auto;
+    text-transform: uppercase;
+    color: #20616e;
+}
+  
+
 
 /* ------------------------------FOOTER------------------------------ */
 
