@@ -12,12 +12,14 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-
-    
+/**
+ * Définition de préfixes de Routes (préfixes d'URL et de nom)
+ * @Route("/admin", name="admin_")
+ */    
 class DashboardController extends AbstractController
 {
    /**
-     * @Route("/admin", name="admin_")
+     * @Route("", name="dashboard")
      */
     public function index(): Response
     {
@@ -106,7 +108,7 @@ class DashboardController extends AbstractController
             $manager->flush();
 
             $this->addFlash('info', sprintf('Le patient "%" a bien été supprimé.', $patient->getNom()));
-            return $this->redirectToRoute('patient_list');
+            return $this->redirectToRoute('admin_patient_list');
         }
 
         return $this->render('admin/dashboard/patient_delete.html.twig', [

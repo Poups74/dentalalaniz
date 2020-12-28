@@ -1123,6 +1123,30 @@ section{
 	margin: -95px 0;
 }
 
+#dashboard {
+	height: 100vh;
+}
+
+#menuDashboard {
+	display: flex;
+	margin: 0 auto;
+	width: 80%;
+}
+
+.itemMenuDash {
+	width: 33%;
+	background-color: #396169;
+	font-size: 30px;
+	font-family: "roboto";
+	font-weight: 300;
+	text-align: center;
+	margin: 50px 5px;
+	line-height: 100px;
+	border-radius: 10px;
+	text-decoration: none;
+	color: #fff;
+}
+
 /* ADMIN tableau patient list */
 
 #membre_equipe_form_image{

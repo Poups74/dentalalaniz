@@ -5,5 +5,13 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Admin</h1>
+    <section id="dashboard">
+        <h1>Gestion du back-office</h1>
+
+        <div id="menuDashboard">
+            <a href="{{ path('admin_patient_list') }}" class="itemMenuDash"><div >Patients</div></a>
+            <a href="{{ path('admin_membre_equipe_list') }}" class="itemMenuDash"><div>Equipe</div></a>
+            <a href="{{ path('ajout_admin') }}" class="itemMenuDash"><div>Administrateurs</div> </a>       
+        </div>
+    </section>
 {% endblock %}

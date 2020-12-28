@@ -12,7 +12,7 @@
 				<div></div>
 			</a>
 
-			<a href="{{ path('admin_') }}" class="boutonmenu">
+			<a href="{{ path('admin_dashboard') }}" class="boutonmenu">
 				<p>Admin</p>
 			</a>
 			
@@ -20,7 +20,7 @@
 				<p>Equipe</p>
 			</a>
 
-            <a href="{{path('patient_list')}}"  class="boutonmenu">
+            <a href="{{path('admin_patient_list')}}"  class="boutonmenu">
 				<p>Patients</p>
 			</a>
 
@@ -42,9 +42,9 @@
 
 		<div class="menu nav">
 			<a href={{ path('Home') }}>Accueil</a>
-			<a href="{{ path('admin_') }}">Admin</a>
+			<a href="{{ path('admin_dashboard') }}">Admin</a>
 			<a href="{{ path('admin_membre_equipe_list') }}">Equipe</a>
-			<a href="{{path('patient_list')}}">Patients</a>
+			<a href="{{path('admin_patient_list')}}">Patients</a>
 			<a class="boutonmenu" href="{{ path('app_logout') }}">Déconnexion</a>
 		</div>
 

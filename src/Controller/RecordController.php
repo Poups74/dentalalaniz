@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class RecordController extends AbstractController
 {
 
-/**
+    /**
      * Page d'un patient
      * @Route("/patient/{id<\d+>}", name="patient_page")
      */
@@ -22,7 +22,7 @@ class RecordController extends AbstractController
         );
 }
 
-/**
+    /**
      * Liste des consultations
      * @Route("/consult_list/{id<\d+>}", name="consult_list")
      */
@@ -35,8 +35,7 @@ class RecordController extends AbstractController
         );
 }
         
-
-/**
+    /**
      * Page d'une consultation
      * @Route("/consult/{id<\d+>}", name="consult_page")
      */
