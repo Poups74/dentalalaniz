@@ -1,0 +1,45 @@
+{% extends "_template.html.twig" %}
+
+
+{% block title %}
+    Connexion Admin
+{% endblock %}
+
+{% block description %}
+    
+{% endblock %}
+
+
+
+{% block content %}
+    <h1 class="titreConnexion">Connexion Administrateur</h1>
+
+    {# si l'utilisateur est déjà connecté #}
+    {% if app.user %}
+        <div class="info_message">
+                    Vous êtes connecté en tant que {{ app.user.username }}, <a href="{{ path('app_logout') }}">Déconnexion</a>
+        </div>
+    {% endif %}
+
+    {# si une erreur survient #}
+    {% if error %}
+        <div class="error_message">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    <form method="post" class="ConnexionForm"> 
+
+        <label for="username"></label>
+			<input class="formConnexion" name="username" type="text" placeholder="Username"><br>
+
+        <label for="password"></label>
+			<input class="formConnexion" name="password" type="password" placeholder="Password"><br>
+
+        <input class="btnConnexion" type="submit" value="Connexion">
+
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+    
+    </form>
+
+{% endblock %}
+
+

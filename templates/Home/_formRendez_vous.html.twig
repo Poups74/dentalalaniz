@@ -1,0 +1,38 @@
+{{ form_start(patient_form, {'attr': {'class': 'rdvForm'}}) }}
+	
+	<label>Spécialiste concerné</label><br>
+{{ form_widget(patient_form.SelectMedecin, {'attr': {'placeholder': 'Choisissez votre Medecin', 'class': 'formpage'}})  }}
+
+	<div class="civilitepage">
+		{{ form_row(patient_form.civilite)}}
+	</div><br>
+
+
+	
+
+		{{ form_widget(patient_form.Nom, {'attr': {'placeholder': 'votre Nom', 'class': 'formpage'}})  }}
+
+
+		{{ form_widget(patient_form.Prenom, {'attr': {'placeholder': 'votre Prenom', 'class': 'formpage'}})  }}
+
+		{{ form_widget(patient_form.Telephone, {'attr': {'placeholder': 'votre Telephone', 'class': 'formpage'}})  }}
+		{{ form_widget(patient_form.Email, {'attr': {'placeholder': 'votre Email', 'class': 'formpage'}})  }}
+		 
+
+	
+	{# <label for="motif"></label>
+		<input class="formpage" placeholder="Motif de la consultation souhaitée" type="text" id="motif"><br> #}
+		{{ form_widget(patient_form.MotifConsultation, {'attr': {'placeholder': 'Motif de la consultation souhaitée', 'class': 'formpage'}})  }}
+
+
+		
+
+	{# <label for="msg"></label> #}
+		{# <textarea id="msg" placeholder="Message destiné au service" name="user_message"></textarea><br> #}
+		{{ form_widget(patient_form.message, {'attr': {'placeholder': 'Message destiné au service', 'id': 'msg'}})  }}
+
+	
+
+	<input id="envoyerpage" type="submit" value="Envoyer">
+
+{{ form_end(patient_form) }}

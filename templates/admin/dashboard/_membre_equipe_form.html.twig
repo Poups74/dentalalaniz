@@ -1,0 +1,22 @@
+{{ form_start(membreEquipe_form,{'attr': {'class': 'rdvForm'}}) }}
+
+
+
+        
+{{ form_widget(membreEquipe_form.civilite, {'attr': {'placeholder': 'Civilité', 'class': 'formpage'}})  }}
+{{ form_widget(membreEquipe_form.titre, {'attr': {'placeholder': 'Titre', 'class': 'formpage'}})  }}
+{{ form_widget(membreEquipe_form.nom, {'attr': {'placeholder': 'Nom', 'class': 'formpage'}})  }}
+{{ form_widget(membreEquipe_form.prenom, {'attr': {'placeholder': 'Prénom', 'class': 'formpage'}})  }}
+{{ form_widget(membreEquipe_form.metier, {'attr': {'placeholder': 'Métier', 'class': 'formpage'}})  }}
+{{ form_widget(membreEquipe_form.specialite, {'attr': {'placeholder': 'Spécialité', 'class': 'formpage'}})  }}
+{{ form_widget(membreEquipe_form.description_metier, {'attr': {'Description métier': 'Civilité', 'class': 'formpage'}})  }}
+{{ form_widget(membreEquipe_form.experience, {'attr': {'placeholder': 'experience', 'class': 'formpage'}})  }}
+{{ form_widget(membreEquipe_form.formation, {'attr': {'placeholder': 'formation', 'class': 'formpage'}})  }}
+{{ form_widget(membreEquipe_form.image, {'attr': {'placeholder': 'image'}})}}
+
+<button type="submit" class="button is-primary is-fullwidth ">
+        Enregistrer
+</button>
+{{ form_end(membreEquipe_form)}}
+
+
