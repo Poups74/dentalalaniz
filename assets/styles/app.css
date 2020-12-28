@@ -1105,7 +1105,7 @@ section{
 .logoAdmin {
 	position: absolute;
 	top: 0px;
-	left: 30px;
+	right: 30px;
 	color: white;
 	font-size: 35px;
 	margin: 55px 0;
