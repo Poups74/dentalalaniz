@@ -49,11 +49,19 @@ class PatientFormType extends AbstractType
 
         $builder->add('SelectMedecin', ChoiceType::class, array(
                             'choices' => $array,
+<<<<<<< HEAD
+=======
+                            'data_class' => null,
+>>>>>>> RV
                             'mapped'=> false))
 
 
 
+<<<<<<< HEAD
             ->add('nom',TextType::class, [
+=======
+            ->add('Nom',TextType::class, [
+>>>>>>> RV
                 'constraints' => [
                     new NotBlank(['message' => 'Le nom est manquant.']),
                     new Length([
@@ -73,8 +81,13 @@ class PatientFormType extends AbstractType
                     ])
                 ]
             ])
+<<<<<<< HEAD
             ->add('telephone',TelType::class)
             ->add('email', EmailType::class)
+=======
+            ->add('Telephone',TelType::class)
+            ->add('Email', EmailType::class)
+>>>>>>> RV
             ->add('civilite', ChoiceType::class,[
                 'choices'=>[
                     'femme'=>'f',
@@ -83,10 +96,19 @@ class PatientFormType extends AbstractType
                 'expanded'=>true
             ])
             ->add('MotifConsultation',TextType::class,[
+<<<<<<< HEAD
                 'mapped'=>false
             ] )
             ->add('message', TextareaType::class,[
                 'mapped'=>false
+=======
+                'mapped'=>false,
+                'data_class' => null
+            ] )
+            ->add('message', TextareaType::class,[
+                'mapped'=>false,
+                'data_class' => null
+>>>>>>> RV
             ])
             ;
     }
