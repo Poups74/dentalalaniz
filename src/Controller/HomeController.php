@@ -6,7 +6,6 @@ use App\Entity\MembreEquipe;
 use App\Repository\MembreEquipeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
@@ -14,16 +13,9 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="Home")
      */
-    public function index(SessionInterface $session): Response
+    public function index(): Response
     {
-        // dd($session->get('actif'));
-
-        if( $session->get('actif')){  
-            return $this->render('home/home.html.twig');
-        }else{
-            $session->set('actif', '1');
-            return $this->render('home/popup.html.twig');
-        }
+        return $this->render('home/home.html.twig');
     }
 
     /**

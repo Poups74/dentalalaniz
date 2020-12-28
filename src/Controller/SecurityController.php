@@ -11,8 +11,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
-
 
 class SecurityController extends AbstractController
 {
@@ -43,7 +41,6 @@ class SecurityController extends AbstractController
 
     /**
      * @Route("/ajout", name="ajout_admin")
-     * @IsGranted("ROLE_ADMIN")
      */
     public function insert_admin(UserRepository $user, Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder) 
     {
