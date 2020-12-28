@@ -6,7 +6,7 @@
 
 {% block content %}
 
-
+{% include "includes/flash.html.twig" %}
 
     <div class="section">
         <h1 class="title">Membres de l'équipe: {{ membre_equipe_list|length }}</h1>
@@ -14,6 +14,8 @@
 
 
     <div class="section">
+
+	
 
          <a href="{{ path('admin_membre_equipe_add') }}">
             <h2 class="title">Ajouter un membre de l'équipe</h2>

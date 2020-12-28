@@ -6,11 +6,15 @@
 
 {% block content %}
 
+{% include "includes/flash.html.twig" %}
+
     <div class="section">
         <h1 class="title">Patients : {{ patient_list|length }}</h1>
     </div>
 
     <div class="section">
+
+
 
          <a href="{{ path('patient_add') }}">
             <h2 class="title">Ajouter un nouveau patient</h2>

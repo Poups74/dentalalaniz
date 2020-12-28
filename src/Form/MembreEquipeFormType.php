@@ -30,8 +30,24 @@ class MembreEquipeFormType extends AbstractType
                     
                         ]
                     ] )
-            ->add('experience')
-            ->add('formation')
+            ->add('experience',TextareaType::class,[
+                'constraints'=> [
+                    new Length([
+                        'max'=> 1000,
+                        'maxMessage'=>'Le nom ne peut comporter plus de {{limit}}caractères.'
+                        ])
+                    
+                        ]
+                    ])
+            ->add('formation',TextareaType::class,[
+                'constraints'=> [
+                    new Length([
+                        'max'=> 1000,
+                        'maxMessage'=>'Le nom ne peut comporter plus de {{limit}}caractères.'
+                        ])
+                    
+                        ]
+                    ])
             ->add('image',FileType::class,array('data_class' => null,'required' => false,'label'=>'Inserez une photo'));
                
     }

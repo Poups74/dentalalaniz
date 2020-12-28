@@ -1,4 +1,6 @@
+{% include "includes/flash.html.twig" %}
 {{ form_start(patient_form, {'attr': {'class': 'rdvForm'}}) }}
+
 	
 	<label>Spécialiste concerné</label><br>
 {{ form_widget(patient_form.SelectMedecin, {'attr': {'placeholder': 'Choisissez votre Medecin', 'class': 'formpage'}})  }}
@@ -8,9 +10,8 @@
 	</div><br>
 
 
-	
-
 		{{ form_widget(patient_form.nom, {'attr': {'placeholder': 'votre Nom', 'class': 'formpage'}})  }}
+
 
 
 		{{ form_widget(patient_form.prenom, {'attr': {'placeholder': 'votre Prenom', 'class': 'formpage'}})  }}
