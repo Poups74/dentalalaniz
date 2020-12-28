@@ -648,6 +648,11 @@ h1 {
    padding:0 0 40px 0;
 }
 
+.adminMembresEquipe{
+
+	display:flex;
+}
+
 .plusdInfos {
 	display: none;
 }
