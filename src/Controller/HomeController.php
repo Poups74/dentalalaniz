@@ -32,7 +32,7 @@ class HomeController extends AbstractController
             
 
 
-            $message = (new TemplatedEmail())
+            $email = (new TemplatedEmail())
                 // On attribue l'expéditeur
                 ->from('noreply@jacquot-sebastien.fr')
                 // On attribue le destinataire
@@ -45,7 +45,7 @@ class HomeController extends AbstractController
                     ])
                 
             ;
-            $mailer->send($message);
+            $mailer->send($email);
 
 
             $manager->persist($patientHome);
@@ -54,7 +54,7 @@ class HomeController extends AbstractController
             $manager->flush();
         }
 
-        if ($session->get('actif')) {
+        if ( $session->get('actif') ) {
             return $this->render('home/home.html.twig', [
                 'patient' => $formHome->createView()
             ]);
@@ -64,6 +64,7 @@ class HomeController extends AbstractController
                 'patient' => $formHome->createView()
             ]);
         }
+        
     }
 
     
@@ -107,6 +108,7 @@ class HomeController extends AbstractController
         
         if ($form->isSubmitted() && $form->isValid()) {
             $patient = $form->getData();
+
             $motif = $form->get('MotifConsultation')->getData();
             $messagePatient =$form->get('message')->getData();
             $medecin= $form->get('SelectMedecin')->getData();
@@ -114,7 +116,7 @@ class HomeController extends AbstractController
             
 
 
-            $message = (new TemplatedEmail())
+            $email = (new TemplatedEmail())
                 // On attribue l'expéditeur
                 ->from('noreply@jacquot-sebastien.fr')
                 // On attribue le destinataire
@@ -124,24 +126,21 @@ class HomeController extends AbstractController
                     'medecin'=>$medecin,
                     'patient'=>$patient,
                     'motif'=> $motif,
-                    'message'=>$messagePatient
+                    'message'=>$messagePatient,
                     ])
                 
             ;
             // dd($message);
-            $mailer->send($message);
+            $mailer->send($email);
 
 
             $manager->persist($patient);
 
-            $this->addFlash('message', 'Votre message a été transmis, nous vous répondrons dans les meilleurs délais.');
+            $this->addFlash('info', 'Votre message a été transmis, nous vous répondrons dans les meilleurs délais.');
             $manager->flush();
         }
         return $this->render('home/rendez_vous.html.twig', [
-            'patient_form' =>  $form->createView(),
-
-            
-                                
+            'patient_form' => $form->createView()
         ]);
     }
 
