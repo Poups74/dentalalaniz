@@ -3,8 +3,10 @@
 namespace App\Form;
 
 use App\Entity\Patient;
+use App\Repository\MembreEquipeRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -16,11 +18,11 @@ use Symfony\Component\Validator\Constraints\NotBlank;
 
 class PatientFormType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    private $medecin ;
+
+
+    public function __construct( MembreEquipeRepository  $medecin)
     {
-<<<<<<< Updated upstream
-        $builder
-=======
        $this->medecin=$medecin ;
        
     }
@@ -45,13 +47,13 @@ class PatientFormType extends AbstractType
             }
         }
 
-        $builder->add('SelectMedecin',ChoiceType::class, array(
+        $builder->add('SelectMedecin', ChoiceType::class, array(
                             'choices' => $array,
+                            'data_class' => null,
                             'mapped'=> false))
 
 
 
->>>>>>> Stashed changes
             ->add('Nom',TextType::class, [
                 'constraints' => [
                     new NotBlank(['message' => 'Le nom est manquant.']),
@@ -74,9 +76,21 @@ class PatientFormType extends AbstractType
             ])
             ->add('Telephone',TelType::class)
             ->add('Email', EmailType::class)
-            ->add('civilite', CheckboxType::class)
-            ->add('MotifConsultation',TextType::class )
-            ->add('message', TextareaType::class)
+            ->add('civilite', ChoiceType::class,[
+                'choices'=>[
+                    'femme'=>'f',
+                    'homme'=>'h'
+                ],
+                'expanded'=>true
+            ])
+            ->add('MotifConsultation',TextType::class,[
+                'mapped'=>false,
+                'data_class' => null
+            ] )
+            ->add('message', TextareaType::class,[
+                'mapped'=>false,
+                'data_class' => null
+            ])
             ;
     }
 
