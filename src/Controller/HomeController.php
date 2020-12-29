@@ -36,11 +36,12 @@ class HomeController extends AbstractController
                 // On attribue l'expéditeur
                 ->from('noreply@jacquot-sebastien.fr')
                 // On attribue le destinataire
-                ->to('tooky972mada@gmail.com')
+                ->to('diaphrvbdev@gmail.com')
                 ->htmlTemplate('emails/contact.html.twig')
-                ->subject($motif)
+                ->subject('Demande de renseignements')
                 ->context([
                     'patient'=>$patientHome,
+                    'motif'=>$motif,
                     'message'=>$message
                     ])
                 
@@ -50,7 +51,7 @@ class HomeController extends AbstractController
 
             $manager->persist($patientHome);
 
-            $this->addFlash('message', 'Votre message a été transmis, nous vous répondrons dans les meilleurs délais.');
+            $this->addFlash('info', 'Votre message a été transmis, nous vous répondrons dans les meilleurs délais.');
             $manager->flush();
         }
 

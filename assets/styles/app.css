@@ -187,6 +187,13 @@ nav {
     display: block;
 }
 
+#homeFlash {
+	position: absolute;
+	top: 20px;
+	width: 100%;
+	margin: 0 auto;
+}
+
 #intro {
     width: 100%;
     background-color: #ffffff;
