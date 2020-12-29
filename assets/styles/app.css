@@ -1678,6 +1678,10 @@ nav {
 	
 }
 
+#coordHeader{
+	display: none;
+}
+
 /* ----------------RESP. INDEX---------------- */
 
 #slide {
