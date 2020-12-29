@@ -86,7 +86,7 @@ class DashboardController extends AbstractController
             // Pas d'appel à $form->getData(): l'entité est mise à jour par le formulaire
             // Pas d'appel à $manager->persist(): l'entité est déjà connu de l'EntityManager
             $manager->flush();
-            $this->addFlash('success', 'Le patient a été mis à jour.');
+            $this->addFlash('success', $patient->getprenom() . " " . $patient->getnom() . ' a été mis à jour.');
         }
 
         return $this->render('admin/dashboard/patient_edit.html.twig', [
@@ -107,7 +107,7 @@ class DashboardController extends AbstractController
             $manager->remove($patient);
             $manager->flush();
 
-            $this->addFlash('success', sprintf('Le patient "%" a bien été supprimé.', $patient->getNom()));
+            $this->addFlash('success', sprintf('Le patient ' . $patient->getprenom() . " " . $patient->getnom() . ' a bien été supprimé.', $patient->getNom()));
             return $this->redirectToRoute('admin_patient_list');
         }
 
