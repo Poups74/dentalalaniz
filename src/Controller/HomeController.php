@@ -178,6 +178,14 @@ class HomeController extends AbstractController
         return $this->render('home/mentions_legales.html.twig');
     }
 
+    /**
+     * @Route("/404", name="404")
+     */
+    public function page_not_found(): Response
+    {
+        return $this->render('bundles/TwigBundle/Exception/error404.html.twig');
+    }
+
 
  
 }

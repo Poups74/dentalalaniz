@@ -1,0 +1,20 @@
+{% extends "_template.html.twig" %}
+
+
+{% block title %}
+    404 - Page not found
+{% endblock %}
+
+{% block content %}
+
+        <section id="contain404">
+			<img src="{{ asset('build/images/cactus404.png') }}" alt="dessin de cactus mexicain">
+            <div id="txt404">
+            <p id="titre404">Hey Gringo !<p>
+            <h2>404 - Page not found</h2>
+            <p>The page you are looking for might have be removed had its name changed or is temporarily unavailable.</p>
+            <a href="{{ path('Home') }}"><button>GO TO HOMEPAGE</button></a>
+            </div>      
+        </section>
+			
+{% endblock %}
