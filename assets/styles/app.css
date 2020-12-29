@@ -985,7 +985,7 @@ section{
 #envoyerpage {
 	margin-top: 10px;
 	float: right;
-	width: 100px;
+	width: 120px;
 	height: 30px;;
 	border: none;
     color: #ffffff;
@@ -1124,7 +1124,7 @@ section{
 }
 
 #dashboard {
-	height: 100vh;
+	height: 75vh;
 }
 
 #menuDashboard {
@@ -1135,7 +1135,7 @@ section{
 
 .itemMenuDash {
 	width: 33%;
-	background-color: #396169;
+	background-color: #538c97;
 	font-size: 30px;
 	font-family: "roboto";
 	font-weight: 300;
@@ -1148,6 +1148,10 @@ section{
 }
 
 /* ADMIN tableau patient list */
+
+.section a {
+	text-decoration: none;
+}
 
 #membre_equipe_form_image{
 	color: #20616e;
@@ -1215,6 +1219,10 @@ section{
 	color: #20616e;
 }
 
+.sectionDelete {
+	height: 75vh;
+}
+
 /* --------------- CSS flash ------------------------*/
 
 .notification{
@@ -1223,8 +1231,14 @@ section{
 }
 
 .success_message, .intro_message{
+	width: 60%;
     text-align: center;
-    color: #20616e;
+	color: #20616e;
+	line-height: 45px;
+	border-radius: 5px;
+	background-color: #2e7280;
+	margin: 10px auto;
+	color: #fff;
 }
 
 /* -------------- CSS delete --------------------*/

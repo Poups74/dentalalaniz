@@ -107,7 +107,7 @@ class DashboardController extends AbstractController
             $manager->remove($patient);
             $manager->flush();
 
-            $this->addFlash('info', sprintf('Le patient "%" a bien été supprimé.', $patient->getNom()));
+            $this->addFlash('success', sprintf('Le patient "%" a bien été supprimé.', $patient->getNom()));
             return $this->redirectToRoute('admin_patient_list');
         }
 

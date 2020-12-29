@@ -6,17 +6,15 @@
 
 {% block content %}
 
-{% include "includes/flash.html.twig" %}
-
     <div class="section">
         <h1 class="title">Patients : {{ patient_list|length }}</h1>
     </div>
 
     <div class="section">
 
+        {% include "includes/flash.html.twig" %}
 
-
-         <a href="{{ path('patient_add') }}">
+         <a href="{{ path('admin_patient_add') }}">
             <h2 class="title">Ajouter un nouveau patient</h2>
         </a>
     </div>
@@ -44,10 +42,10 @@
                         <td>{{ patient.telephone }}</td>
                         <td>{{ patient.email }}</td>
                         <td>
-                            <a href="{{ path('patient_edit', {id: patient.id}) }}" class="button is-small is-success">
+                            <a href="{{ path('admin_patient_edit', {id: patient.id}) }}" class="button is-small is-success">
                                 <i class="far fa-edit"></i>
                             </a>
-                            <a href="{{ path('patient_delete', {id: patient.id}) }}" class="button is-small is-danger">
+                            <a href="{{ path('admin_patient_delete', {id: patient.id}) }}" class="button is-small is-danger">
                                 <i class="far fa-trash-alt"></i>
                             </a>
                         </td>

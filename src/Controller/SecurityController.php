@@ -72,7 +72,7 @@ class SecurityController extends AbstractController
                 return $this->redirectToRoute('app_login');
             }
         
-        return $this->render('security/ajoutAdmin.html.twig', [
+        return $this->render('admin/dashboard/ajoutAdmin.html.twig', [
             'admin_form' => $form->createView()
         ]);
     }
