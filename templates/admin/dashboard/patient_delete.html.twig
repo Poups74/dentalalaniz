@@ -12,7 +12,7 @@
         {{ form_start(confirmation_form) }}
 
             {{ form_row(confirmation_form.confirmation, {
-                label: 'Je confirme la suppression du patient' ~ patient.nom ~ 'et de ses coordonnées. '
+                label: 'Je confirme la suppression du patient ' ~ ' ' ~ patient.nom  ~ ' ' ~ ' et de ses coordonnées. '
             }) }}
         
 
