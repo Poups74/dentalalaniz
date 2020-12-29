@@ -6,8 +6,9 @@
 
 {% block content %}
     <div class="section">
-     {% include "includes/flash.html.twig" %}
+    
         <h1 class="title">Nouveau patient</h1>
+        {% include "includes/flash.html.twig" %}
         <div class="section-form-patient">
             {% include "admin/dashboard/_patient_form.html.twig" %}
         </div>

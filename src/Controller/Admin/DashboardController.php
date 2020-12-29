@@ -72,7 +72,7 @@ class DashboardController extends AbstractController
              else{
 
              
-                $this->addFlash('danger', 'Un patient avec cet email existe déja.');
+                $this->addFlash('error', 'Un patient avec cet email existe déja.');
                 return $this->redirectToRoute('admin_patient_add');
 
              }
