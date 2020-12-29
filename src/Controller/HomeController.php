@@ -7,6 +7,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use App\Entity\MembreEquipe;
 use App\Repository\MembreEquipeRepository;
+use App\Repository\PatientRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,7 +20,7 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="Home")
      */
-    public function index(SessionInterface $session, Request $request, EntityManagerInterface $manager, MailerInterface $mailer): Response
+    public function index(SessionInterface $session, Request $request, EntityManagerInterface $manager, MailerInterface $mailer, PatientRepository $patientRepository): Response
     {
         $formHome = $this->createForm(PatientFormType::class,null,['medecin' => false]);
         $formHome->handleRequest($request);
@@ -48,8 +49,16 @@ class HomeController extends AbstractController
             ;
             $mailer->send($email);
 
+            // controle de l'exostence ou nom du patient dans la base de données 
+            // Si un patient existe dans la base avec le même email que celui soumis dans le formulaire, alors 
+            // le patient n'est pas inséré dans la base de données
+            $emailPatientHome= $formHome->get('email')->getData();
+            $isPatient = $patientRepository->findOneBy(['email' => $emailPatientHome]);
+            if (!$isPatient){
+       
 
             $manager->persist($patientHome);
+             }
 
             $this->addFlash('info', 'Votre message a été transmis, nous vous répondrons dans les meilleurs délais.');
             $manager->flush();
@@ -99,7 +108,7 @@ class HomeController extends AbstractController
     /**
      * @Route("/rendez_vous", name="Rendez_vous")
      */
-    public function rendezVous(Request $request, EntityManagerInterface $manager, MailerInterface $mailer ): Response
+    public function rendezVous(Request $request, EntityManagerInterface $manager, MailerInterface $mailer, PatientRepository $patientRepository ): Response
     {
 
         $form = $this->createForm(PatientFormType::class);
@@ -134,9 +143,15 @@ class HomeController extends AbstractController
             ;
             // dd($message);
             $mailer->send($email);
-
-
+            
+            // controle de l'exostence ou nom du patient dans la base de données 
+            // Si un patient existe dans la base avec le même email que celui soumis dans le formulaire, alors 
+            // le patient n'est pas inséré dans la base de données
+            $emailPatient=$form->get('email')->getData();
+            $isPatient = $patientRepository->findOneBy(['email' => $emailPatient]);
+            if (!$isPatient){
             $manager->persist($patient);
+             }
 
             $this->addFlash('info', 'Votre message a été transmis, nous vous répondrons dans les meilleurs délais.');
             $manager->flush();

@@ -80,6 +80,8 @@ class PatientFormType extends AbstractType
                     ])
                 ]
             ])
+
+            
             ->add('telephone',TelType::class)
             ->add('email', EmailType::class)
             ->add('civilite', ChoiceType::class,[

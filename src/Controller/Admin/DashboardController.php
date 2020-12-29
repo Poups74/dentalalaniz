@@ -43,7 +43,7 @@ class DashboardController extends AbstractController
      * Ajouter un patient
      * @Route("/patient/new", name="patient_add")
      */
-    public function patientAdd(Request $request, EntityManagerInterface $manager)
+    public function patientAdd(Request $request, EntityManagerInterface $manager, PatientRepository $patientRepository )
     {
         // 1. Créer le formulaire
         $form = $this->createForm(PatientFormType::class, null, ['medecin'=> false,'saisiePatient'=> false] );
@@ -55,13 +55,31 @@ class DashboardController extends AbstractController
             // 4. Récupérer les données de formulaire
             $patient = $form->getData();
 
-            // Enregistrement en base de données
+           // controle de l'exostence ou nom du patient dans la base de données 
+            // Si un patient existe dans la base avec le même email que celui soumis dans le formulaire, alors 
+            // le patient n'est pas inséré dans la base de données
+            $emailPatientHome=  $form->get('email')->getData();
+            $isPatient = $patientRepository->findOneBy(['email' => $emailPatientHome]);
+            if (!$isPatient){
+    
             $manager->persist($patient);
-            $manager->flush();
 
+            $manager->flush();
             // Ajout d'un message flash
             $this->addFlash('success', 'Le nouveau patient a été enregistré.');
             return $this->redirectToRoute('admin_patient_edit', ['id' => $patient->getId()]);
+             }
+             else{
+
+             
+                $this->addFlash('danger', 'Un patient avec cet email existe déja.');
+                return $this->redirectToRoute('admin_patient_add');
+
+             }
+
+
+
+          
         }
 
         // On envoit une "vue de formulaire" au template
