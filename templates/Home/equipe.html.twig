@@ -26,7 +26,7 @@
 					<div class="container" id="{{membre_equipe.id}}">
 						<div class ="photoProfil">
 							<div class="photoDoc">
-								<div class="bouton"><a href="rendez-vous.php">Rendez-vous</a>
+								<div class="bouton"><a href="{{ path('Rendez_vous') }}">Rendez-vous</a>
 								</div>
 									<img src={{ asset('/images/')~ membre_equipe.image }} alt="photo de" {{membre_equipe.titre}}" "{{membre_equipe.prenom}}" "{{membre_equipe.nom}}>
 									<h2> {{membre_equipe.titre}}  {{membre_equipe.prenom}}  {{membre_equipe.nom}} </h2>

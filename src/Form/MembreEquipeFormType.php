@@ -24,7 +24,7 @@ class MembreEquipeFormType extends AbstractType
             ->add('description_metier',TextareaType::class,[
                 'constraints'=> [
                     new Length([
-                        'max'=> 1000,
+                        'max'=> 3000,
                         'maxMessage'=>'Le nom ne peut comporter plus de {{limit}}caractères.'
                         ])
                     

@@ -37,7 +37,7 @@ class HomeController extends AbstractController
                 // On attribue l'expéditeur
                 ->from('noreply@jacquot-sebastien.fr')
                 // On attribue le destinataire
-                ->to('diaphrvbdev@gmail.com')
+                ->to('levejeanchristian@gmail.com')
                 ->htmlTemplate('emails/contact.html.twig')
                 ->subject('Demande de Renseignements')
                 ->context([
@@ -130,7 +130,7 @@ class HomeController extends AbstractController
                 // On attribue l'expéditeur
                 ->from('noreply@jacquot-sebastien.fr')
                 // On attribue le destinataire
-                ->to('diaphrvbdev@gmail.com')
+                ->to('levejeanchristian@gmail.com')
                 ->htmlTemplate('emails/contact.html.twig')
                 ->subject('Demande de Rendez-vous')
                 ->context([
