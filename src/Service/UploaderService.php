@@ -8,19 +8,32 @@ use Symfony\Component\HttpFoundation\File\File;
 class UploaderService 
 {
     public const MEMBRE_EQUIPE = __DIR__.'/../../public/images';
+  
     // Il faut générer un nom de fichier 
     public function saveMembreEquipePhoto(File $file):string
     {
+        var_dump(self::MEMBRE_EQUIPE);
         return $this->uploadFile($file, self::MEMBRE_EQUIPE);
     }
 
 
     private function uploadFile(File $file, string $dossier):string
     {
-      
+        if ($file->getFilename()=='ocean.png'){
+            // dd($file->getFilename());
+            $name='ocean.png';
+            
+            $file->move($dossier, $name);
+            return $name;
+        }
+      else{
+
         $name = uniqid(time()).'.'. $file->guessExtension();
         $file->move($dossier, $name);
         return $name;
+            }
+
+      
 
         
       

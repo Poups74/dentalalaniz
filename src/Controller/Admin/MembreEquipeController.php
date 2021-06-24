@@ -21,7 +21,7 @@ use Symfony\Component\HttpFoundation\File\File;
 
 class MembreEquipeController extends AbstractController
 { 
-    
+  
 
     /**
     * @Route("/poup", name="")
@@ -68,6 +68,9 @@ class MembreEquipeController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
             $membreEquipe = $form->getData();
+
+            if(file_exists($membreEquipe->getImage()))
+            {
             $brochureFile = $form->get('image')->getData();
             $fileName = $uploaderService->saveMembreEquipePhoto($brochureFile);
             // dd( $fileName);
@@ -80,13 +83,29 @@ class MembreEquipeController extends AbstractController
 
             // Ajout d'un message flash
             $this->addFlash('success', 'Le nouveau membre a été enregistré.');
+            }
+
+
+            else{
+
+
+                $image = new File($this->getParameter('kernel.project_dir').'/public/images/ocean.png');
+                // dd($image);
+                $membreEquipe->setImage( $image);
+                $fileName = $uploaderService->saveMembreEquipePhoto($image);
+                // dd( $fileName);
+                $membreEquipe->setImage($fileName);
+                $manager->persist($membreEquipe);
+                $manager->flush();
+                  // Ajout d'un message flash
+                $this->addFlash('success', 'Le nouveau membre a été enregistré.');
+
+            
+            }
             
             // dd($file);
 
-
-
-
-            return $this->redirectToRoute('admin_membre_equipe_edit', ['id' => $membreEquipe->getId()]);
+            // return $this->redirectToRoute('admin_membre_equipe_edit', ['id' => $membreEquipe->getId()]);
         }
 
         // On envoit une "vue de formulaire" au template
@@ -101,19 +120,33 @@ class MembreEquipeController extends AbstractController
      * Modification d'un artiste
      * @Route("/{id}/edit", name="edit")
      */
-    public function membreEquipeEdit(MembreEquipe $membreEquipe, Request $request, EntityManagerInterface $manager)
+    public function membreEquipeEdit(MembreEquipe $membreEquipe, Request $request, EntityManagerInterface $manager, UploaderService $uploaderService)
     {
         // On passe l'entité à modifier au formulaire
         // Il sera pré-rempli, et l'entité sera automatiquement modifiée
 
-
-        $membreEquipe->setImage(
-            new File($this->getParameter('kernel.project_dir').'/public/images/'.$membreEquipe->getImage())
-        );
-
-
         $form = $this->createForm(MembreEquipeFormType::class, $membreEquipe);
         $form->handleRequest($request);
+
+       
+        if(file_exists($membreEquipe->getImage()))
+        {
+            
+        $brochureFile = $form->get('image')->getData();
+        // dd($brochureFile);
+        $fileName = $uploaderService->saveMembreEquipePhoto($brochureFile);
+        // dd( $fileName);
+        
+        $membreEquipe->setImage($fileName);
+
+        }
+
+        // $membreEquipe->setImage(
+        //     new File($this->getParameter('kernel.project_dir').'/public/images/'.$membreEquipe->getImage())
+        // );
+        // dd($membreEquipe->getImage());
+
+        
 
         if ($form->isSubmitted() && $form->isValid()) {
             // Pas d'appel à $form->getData(): l'entité est mise à jour par le formulaire
